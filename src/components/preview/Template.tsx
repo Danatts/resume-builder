@@ -1,14 +1,14 @@
 import type { Resume } from '@/types';
-import { createSignal } from 'solid-js';
 import BasicsPreview from '@/components/preview/BasicsPreview';
-import placeholder from '@/utils/placeholder';
+import placeholder from '@/resources/placeholder';
+import { createStore } from 'solid-js/store';
 
 export default function Template() {
-    const [resume, setResume] = createSignal<Resume>(placeholder);
+    const [store, setStore] = createStore<Resume>(placeholder);
 
     return (
         <>
-            <BasicsPreview resume={resume} setResume={setResume} />
+            <BasicsPreview resume={store} setResume={setStore} />
         </>
     );
 }
