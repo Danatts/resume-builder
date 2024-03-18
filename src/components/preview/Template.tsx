@@ -1,12 +1,12 @@
-import { ResumeProvider } from '@/contexts/ResumeContext';
-import HeroPreview from '@/components/preview/HeroPreview';
-import AboutPreview from '@/components/preview/AboutPreview';
+import AboutPreview from "@/components/preview/AboutPreview";
+import HeroPreview from "@/components/preview/HeroPreview";
+import { ResumeProvider } from "@/contexts/ResumeContext";
 
 export default function Template() {
-    return (
-        <ResumeProvider>
-            <HeroPreview />
-            <AboutPreview />
-        </ResumeProvider>
-    );
+	return (
+		<ResumeProvider>
+			<HeroPreview />
+			<AboutPreview />
+		</ResumeProvider>
+	);
 }

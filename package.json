@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "check": "astro check && pnpm run lint",
+    "lint": "pnpm biome check --apply src/*",
+    "build": "pnpm run check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -17,5 +19,8 @@
     "solid-js": "^1.8.15",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.4.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.6.1"
   }
 }
