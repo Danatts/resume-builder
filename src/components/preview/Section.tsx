@@ -1,5 +1,5 @@
 import type { JSXElement, Accessor } from "solid-js";
-import { Show, createEffect } from "solid-js";
+import { Show } from "solid-js";
 
 interface Props {
     title?: string,

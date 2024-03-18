@@ -1,5 +1,5 @@
 import useResumeContext from '@/hooks/useResumeContext';
-import { onMount } from 'solid-js';
+import { Show, onMount } from 'solid-js';
 import Section from '@/components/preview/Section';
 
 export default function BasicsPreview() {
@@ -10,6 +10,7 @@ export default function BasicsPreview() {
   $basics.addEventListener('input', (e) => {
     const { name, value } = e.target as HTMLInputElement;
     setStore('basics', { ...store.basics, [name]: value });
+    console.log(store.basics)
   });
 
   onMount(() => {
@@ -26,8 +27,12 @@ export default function BasicsPreview() {
     <Section>
       <div class="flex flex-row gap-2 justify-between items-center">
         <div class="flex flex-col gap-2">
-          <h1 class="font-bold text-2xl text-left">{store?.basics?.name}</h1>
-          <h2 class="font-medium text-base text-left text-neutral-500">{store.basics?.label}</h2>
+          <Show when={store?.basics?.name}>
+            <h1 class="font-bold text-2xl text-left">{store?.basics?.name}</h1>
+          </Show>
+          <Show when={store.basics?.label}>
+            <h2 class="font-medium text-base text-left text-neutral-500">{store.basics?.label}</h2>
+          </Show>
         </div>
         <figure class="w-36">
           <image class="hidden rounded-md" id="imagePreview" />

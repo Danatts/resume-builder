@@ -1,21 +1,22 @@
 ---
-import placeholder from "@/resources/resumePlaceholder";
+import placeholder from '@/resources/resumePlaceholder';
 const { basics } = placeholder;
 const { location } = basics;
 const { profiles } = basics;
 ---
 
-<fieldset id="basics" name="location" class="flex flex-col">
-    <legend>Basics</legend>
-    <input placeholder={basics.name} id="name" name="name" type="text" />
-    <input placeholder={basics.label} id="label" name="label" type="text" />
-    <label for="image">Upload image</label>
-    <input id="image" name="image" type="file" accept="image/*" class="hidden" />
-    <input placeholder={basics.email} id="email" name="email" type="email" />
-    <input placeholder={basics.phone} id="phone" name="phone" type="tel" />
-    <input placeholder={basics.url} id="url" name="url" type="url" />
-    <textarea placeholder={basics.summary} id="summary" name="summary"
-    ></textarea>
+    <fieldset id="basics" name="basics">
+        <legend>Basics</legend>
+        <input placeholder={basics.name} id="name" name="name" type="text" />
+        <input placeholder={basics.label} id="label" name="label" type="text" />
+        <label for="image">Upload image</label>
+        <input id="image" name="image" type="file" accept="image/*" class="hidden" />
+        <input placeholder={basics.email} id="email" name="email" type="email" />
+        <input placeholder={basics.phone} id="phone" name="phone" type="tel" />
+        <input placeholder={basics.url} id="url" name="url" type="url" />
+        <textarea placeholder={basics.summary} id="summary" name="summary"
+        ></textarea>
+    </fieldset>
     <fieldset id="location" name="location">
         <legend>Location</legend>
         <input

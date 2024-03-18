@@ -1,6 +1,6 @@
 import useResumeContext from "@/hooks/useResumeContext";
 import Section from "@/components/preview/Section";
-import { createEffect, createSignal } from "solid-js";
+import { Show, createEffect, createSignal } from "solid-js";
 
 export default function SummaryPreview() {
     const title = "About me";
@@ -17,7 +17,9 @@ export default function SummaryPreview() {
 
     return (
         <Section title={title} notNull={notNull()}>
-            <p class="text-sm text-neutral-500 text-pretty">{store?.basics?.summary}</p>
+            <Show when={store?.basics?.summary}>
+                <p class="text-sm text-neutral-500 text-pretty">{store?.basics?.summary}</p>
+            </Show>
         </Section>
     );
 }

@@ -1,6 +1,6 @@
 ---
-import BasicsForm from "@/components/form/BasicsForm.astro";
-import Template from "@/components/preview/Template";
+import Form from '@/components/form/Form.astro';
+import Template from '@/components/preview/Template';
 ---
 
 <html lang="en">
@@ -14,9 +14,7 @@ import Template from "@/components/preview/Template";
 	<body>
 		<div class="grid grid-cols-1/2 h-screen">
 			<div class="border-2 border-solid border-black m-1">
-				<form id="form">
-					<BasicsForm />
-				</form>
+				<Form />
 			</div>
 			<div class="border-2 border-solid border-black m-1">
 				<Template client:only="solid-js" />
