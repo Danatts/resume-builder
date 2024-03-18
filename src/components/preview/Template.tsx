@@ -1,14 +1,12 @@
-import type { Resume } from '@/types';
-import BasicsPreview from '@/components/preview/BasicsPreview';
-import resumeSchema from '@/resources/resumeSchema';
-import { createStore } from 'solid-js/store';
+import { ResumeProvider } from '@/contexts/ResumeContext';
+import HeroPreview from '@/components/preview/HeroPreview';
+import AboutPreview from '@/components/preview/AboutPreview';
 
 export default function Template() {
-    const [store, setStore] = createStore<Resume>(resumeSchema);
-
     return (
-        <>
-            <BasicsPreview basics={store.basics} setBasics={setStore} />
-        </>
+        <ResumeProvider>
+            <HeroPreview />
+            <AboutPreview />
+        </ResumeProvider>
     );
 }
