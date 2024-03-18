@@ -1,19 +1,19 @@
-import type { Resume } from '@/types';
+import type { Basics, Resume } from '@/types';
 import type { SetStoreFunction } from 'solid-js/store';
 import { onMount } from 'solid-js';
 
 interface Props {
-  resume: Resume;
-  setResume: SetStoreFunction<Resume>,
+  basics: Basics;
+  setBasics: SetStoreFunction<Resume>,
 }
 
-export default function BasicsPreview({ resume, setResume }: Props) {
+export default function BasicsPreview({ basics, setBasics }: Props) {
 
   onMount(() => {
     let $basics = document.querySelector('#basics');
     $basics.addEventListener('input', (e) => {
       const { name, value } = e.target as HTMLInputElement;
-      setResume('basics', {[name]: value });
+      setBasics('basics', {...basics, [name]: value});
     });
 
     let $image = document.querySelector('#image');
@@ -27,9 +27,9 @@ export default function BasicsPreview({ resume, setResume }: Props) {
 
   return (
     <div>
-      <h1 class="font-bold text-2xl text-left">{resume.basics.name}</h1>
-      <h2 class="font-medium text-base text-left text-neutral-500">{resume.basics.label}</h2>
-      <p class="text-sm text-neutral-500 text-pretty">{resume.basics.summary}</p>
+      <h1 class="font-bold text-2xl text-left">{basics?.name}</h1>
+      <h2 class="font-medium text-base text-left text-neutral-500">{basics?.label}</h2>
+      <p class="text-sm text-neutral-500 text-pretty">{basics?.summary}</p>
       <image class="hidden" id="imagePreview" width={50} height={50} />
     </div>
   );
