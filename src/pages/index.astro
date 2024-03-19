@@ -1,6 +1,7 @@
 ---
 import Form from "@/components/form/Form.astro";
 import Template from "@/components/preview/Template";
+import Panel from "@/components/Panel.astro";
 ---
 
 <html lang="en">
@@ -12,13 +13,13 @@ import Template from "@/components/preview/Template";
 		<title>Resume Builder</title>
 	</head>
 	<body>
-		<div class="grid grid-cols-1/2 h-screen">
-			<div class="border-2 border-solid border-black m-1">
+		<div class="grid grid-cols-2 h-screen">
+			<Panel>
 				<Form />
-			</div>
-			<div class="border-2 border-solid border-black m-1">
+			</Panel>
+			<Panel>
 				<Template client:only="solid-js" />
-			</div>
+			</Panel>
 		</div>
 	</body>
 </html>

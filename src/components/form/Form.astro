@@ -1,7 +1,10 @@
 ---
-import BasicsForm from "@/components/form/BasicsForm.astro";
+import Basics from "@/components/form/Basics.astro";
+import Profiles from "@/components/form/Profiles";
+import "@/styles/main.css";
 ---
 
-<form id="form" name="form">
-    <BasicsForm />
+<form class="p-4 flow" id="form" name="form">
+    <Basics />
+    <Profiles client:load />
 </form>

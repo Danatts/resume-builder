@@ -21,7 +21,6 @@ export default function BasicsPreview() {
 			$imagePreview.src = URL.createObjectURL(
 				(e.target as HTMLInputElement).files[0],
 			);
-			console.log($imagePreview.src);
 		});
 	});
 
