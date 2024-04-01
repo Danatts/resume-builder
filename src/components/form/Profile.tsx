@@ -1,13 +1,13 @@
-import VolunteerCard from "@/components/form/VolunteerCard";
+import ProfileCard from "@/components/form/ProfileCard";
 import useRenderCards from "@/hooks/useRenderCards";
 
-export default function Work() {
+export default function Profiles() {
 	const { createCard, deleteCard, renderCards } = useRenderCards();
 
 	return (
-		<form id="volunteer" name="volunteer">
-			<legend>Volunteer</legend>
-			{renderCards(VolunteerCard)}
+		<form id="profiles" name="profiles">
+			<legend>Profiles</legend>
+			{renderCards(ProfileCard)}
 			<button type="button" onClick={createCard}>
 				Add
 			</button>

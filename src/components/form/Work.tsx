@@ -1,34 +1,18 @@
 import WorkCard from "@/components/form/WorkCard";
-import { createSignal } from "solid-js";
+import useRenderCards from "@/hooks/useRenderCards";
 
 export default function Work() {
-	const [count, setCount] = createSignal<number>(1);
-
-	const renderProfiles = () => {
-		const children = [];
-		for (let i = 0; i < count(); i++) {
-			children.push(<WorkCard />);
-		}
-		return children;
-	};
-
-	const increaseCount = () => {
-		setCount((c) => c + 1);
-	};
-
-	const decreaseCount = () => {
-		if (count() > 0) setCount((c) => c - 1);
-	};
+	const { createCard, deleteCard, renderCards } = useRenderCards();
 
 	return (
 		<form id="work" name="work">
 			<legend>Work Experience</legend>
-			{renderProfiles()}
-			<button type="button" onClick={decreaseCount}>
-				Less
+			{renderCards(WorkCard)}
+			<button type="button" onClick={createCard}>
+				Add
 			</button>
-			<button type="button" onClick={increaseCount}>
-				More
+			<button type="button" onClick={deleteCard}>
+				Remove
 			</button>
 		</form>
 	);
