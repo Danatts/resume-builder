@@ -2,7 +2,6 @@ import { createSignal } from "solid-js";
 import ProfileCard from "@/components/form/ProfileCard";
 import WorkCard from "@/components/form/WorkCard";
 import VolunteerCard from "@/components/form/VolunteerCard";
-import type { CardType } from "@/types";
 
 interface Props {
 	componentName: string;
@@ -10,7 +9,7 @@ interface Props {
 	legend: string;
 }
 
-const CARD: CardType = {
+const CARD = {
 	ProfileCard,
 	WorkCard,
 	VolunteerCard,
