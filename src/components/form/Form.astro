@@ -1,13 +1,13 @@
 ---
-import Basics from "@/components/form/Basics.astro";
-import Location from "@/components/form/Location.astro";
+import Basics from "@/components/form/Basics";
+import Location from "@/components/form/Location";
 import RenderCards from "@/components/form/RenderCards";
 import "@/styles/main.css";
 ---
 
 <div class="p-4 flow" id="form">
-    <Basics />
-    <Location />
+    <Basics client:load />
+    <Location client:load />
     <RenderCards
         componentName={"ProfileCard"}
         legend={"Profiles"}
