@@ -121,3 +121,6 @@ export type Project = {
 	highlights?: string[];
 	url?: string;
 };
+
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+export type CardType = Record<string, any>;

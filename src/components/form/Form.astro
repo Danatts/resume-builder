@@ -1,16 +1,29 @@
 ---
 import Basics from "@/components/form/Basics.astro";
 import Location from "@/components/form/Location.astro";
-import Profile from "@/components/form/Profile";
-import Volunteer from "@/components/form/Volunteer";
-import Work from "@/components/form/Work";
+import RenderCards from "@/components/form/RenderCards";
 import "@/styles/main.css";
 ---
 
 <div class="p-4 flow" id="form">
     <Basics />
     <Location />
-    <Profile client:load />
-    <Work client:load />
-    <Volunteer client:load />
+    <RenderCards
+        componentName={"ProfileCard"}
+        legend={"Profiles"}
+        formID={"profiles"}
+        client:load
+    />
+    <RenderCards
+        componentName={"WorkCard"}
+        legend={"Work Experience"}
+        formID={"work"}
+        client:load
+    />
+    <RenderCards
+        componentName={"VolunteerCard"}
+        legend={"Volunteers"}
+        formID={"volunteer"}
+        client:load
+    />
 </div>
