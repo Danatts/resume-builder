@@ -23,14 +23,9 @@ export default function ProfileCard() {
 					type="text"
 				/>
 			</label>
-			<label for="netUrl">
+			<label for="url">
 				Url
-				<input
-					placeholder={profiles[0].url}
-					id="netUrl"
-					name="url"
-					type="url"
-				/>
+				<input placeholder={profiles[0].url} id="url" name="url" type="url" />
 			</label>
 		</div>
 	);

@@ -1,13 +1,13 @@
-import ProfileCard from "@/components/form/ProfileCard";
+import WorkCard from "@/components/form/WorkCard";
 import { createSignal } from "solid-js";
 
-export default function Profiles() {
+export default function Work() {
 	const [count, setCount] = createSignal<number>(1);
 
 	const renderProfiles = () => {
 		const children = [];
 		for (let i = 0; i < count(); i++) {
-			children.push(<ProfileCard />);
+			children.push(<WorkCard />);
 		}
 		return children;
 	};
@@ -17,12 +17,12 @@ export default function Profiles() {
 	};
 
 	const decreaseCount = () => {
-		if (count() > 0) setCount((c): number => c - 1);
+		if (count() > 0) setCount((c) => c - 1);
 	};
 
 	return (
-		<form id="profiles" name="profiles">
-			<legend>Profiles</legend>
+		<form id="work" name="work">
+			<legend>Work Experience</legend>
 			{renderProfiles()}
 			<button type="button" onClick={decreaseCount}>
 				Less

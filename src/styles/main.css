@@ -16,7 +16,7 @@
         @apply text-xl font-bold mb-2;
     }
 
-    fieldset {
+    form {
         @apply flex flex-col gap-3 mb-3;
     }
 }

@@ -1,10 +1,16 @@
 ---
 import Basics from "@/components/form/Basics.astro";
+import Location from "@/components/form/Location.astro";
 import Profiles from "@/components/form/Profiles";
+import Volunteer from "@/components/form/Volunteer";
+import Work from "@/components/form/Work";
 import "@/styles/main.css";
 ---
 
-<form class="p-4 flow" id="form" name="form">
+<div class="p-4 flow" id="form">
     <Basics />
+    <Location />
     <Profiles client:load />
-</form>
+    <Work client:load />
+    <Volunteer client:load />
+</div>

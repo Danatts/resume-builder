@@ -1,12 +1,11 @@
 ---
-import placeholder from "@/resources/resumePlaceholder";
 import CameraIcon from "@/icons/CameraIcon.astro";
+import placeholder from "@/resources/resumePlaceholder";
 const { basics } = placeholder;
 const { location } = basics;
 ---
 
-<!-- Basics -->
-<fieldset class="flex flex-col gap-3" id="basics" name="basics">
+<form class="flex flex-col gap-3" id="basics" name="basics">
     <legend>Basics</legend>
     <label for="name">
         Name
@@ -52,49 +51,4 @@ const { location } = basics;
         <CameraIcon size={40} />
         Uplaod profile picture
     </label>
-</fieldset>
-<!-- Location -->
-<fieldset id="location" name="location">
-    <legend>Location</legend>
-    <label for="region">
-        Country
-        <input
-            placeholder={location.region}
-            id="region"
-            name="region"
-            type="text"
-        />
-    </label>
-    <label for="countryCode">
-        Country code
-        <input
-            placeholder={location.countryCode}
-            id="countryCode"
-            name="countryCode"
-            type="text"
-        />
-    </label>
-    <label for="city">
-        City
-        <input placeholder={location.city} id="city" name="city" type="text" />
-    </label>
-    <label for="address">
-        Address
-        <input
-            placeholder={location.address}
-            id="address"
-            name="address"
-            type="text"
-        />
-    </label>
-    <label for="postalCode">
-        Postal Code
-        <input
-            placeholder={location.postalCode}
-            id="postalCode"
-            name="postalCode"
-            type="text"
-        />
-    </label>
-</fieldset>
-
+</form>
