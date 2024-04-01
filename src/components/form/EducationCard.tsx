@@ -23,7 +23,7 @@ export default function EducationCard() {
 				/>
 			</label>
 			<label for="url">
-				Institution Url
+				Url
 				<input id="url" name="url" type="url" placeholder={education[0].url} />
 			</label>
 			<label for="studyType">

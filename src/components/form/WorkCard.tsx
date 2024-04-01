@@ -5,7 +5,7 @@ export default function WorkCard() {
 	return (
 		<div class="flex flex-col gap-3 border-black border p-3 rounded-md">
 			<label for="name">
-				Company name
+				Company
 				<input id="name" name="name" type="text" placeholder={work[0].name} />
 			</label>
 			<label for="position">
@@ -18,7 +18,7 @@ export default function WorkCard() {
 				/>
 			</label>
 			<label for="url">
-				Company Url
+				Url
 				<input id="url" name="url" type="url" placeholder={work[0].url} />
 			</label>
 			<label for="startDate">

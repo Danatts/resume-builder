@@ -1,9 +1,16 @@
 import { createSignal, Show } from "solid-js";
+import AwardCard from "@/components/form/AwardCard";
+import CertificateCard from "@/components/form/CertificateCard";
 import EducationCard from "./EducationCard";
+import InterestCard from "@/components/form/InterestCard";
+import LanguageCard from "@/components/form/LanguageCard";
 import ProfileCard from "@/components/form/ProfileCard";
+import ProjectCard from "@/components/form/ProjectCard";
+import PublicationCard from "@/components/form/PublicationCard";
+import ReferenceCard from "@/components/form/ReferenceCard";
+import SkillCard from "@/components/form/SkillCard";
 import VolunteerCard from "@/components/form/VolunteerCard";
 import WorkCard from "@/components/form/WorkCard";
-import AwardCard from "@/components/form/AwardCard";
 
 interface Props {
 	componentName: string;
@@ -12,11 +19,18 @@ interface Props {
 }
 
 const CARD = {
+	AwardCard,
+	CertificateCard,
+	EducationCard,
+	InterestCard,
+	LanguageCard,
 	ProfileCard,
+	ProjectCard,
+	PublicationCard,
+	ReferenceCard,
+	SkillCard,
 	WorkCard,
 	VolunteerCard,
-	EducationCard,
-	AwardCard,
 };
 
 export default function RenderCards(props: Props) {

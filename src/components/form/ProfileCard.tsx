@@ -15,7 +15,7 @@ export default function ProfileCard() {
 				/>
 			</label>
 			<label for="username">
-				User name
+				Username
 				<input
 					placeholder={profiles[0].username}
 					id="username"

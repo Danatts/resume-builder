@@ -26,7 +26,6 @@ export default function AwardCard() {
 					type="text"
 				/>
 			</label>
-
 			<label for="summary">
 				Summary
 				<textarea id="summary" name="summary" placeholder={awards[0].summary} />
