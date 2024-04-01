@@ -1,7 +1,8 @@
-import { createSignal } from "solid-js";
+import { createSignal, Show } from "solid-js";
+import EducationCard from "./EducationCard";
 import ProfileCard from "@/components/form/ProfileCard";
-import WorkCard from "@/components/form/WorkCard";
 import VolunteerCard from "@/components/form/VolunteerCard";
+import WorkCard from "@/components/form/WorkCard";
 
 interface Props {
 	componentName: string;
@@ -13,6 +14,7 @@ const CARD = {
 	ProfileCard,
 	WorkCard,
 	VolunteerCard,
+	EducationCard,
 };
 
 export default function RenderCards(props: Props) {
@@ -36,15 +38,25 @@ export default function RenderCards(props: Props) {
 	};
 
 	return (
-		<form id={props.formID} name={props.formID}>
-			<legend>{props.legend}</legend>
-			{renderCards()}
-			<button type="button" onClick={createCard}>
+		<Show when={Card}>
+			<form id={props.formID} name={props.formID}>
+				<legend>{props.legend}</legend>
+				{renderCards()}
+			</form>
+			<button
+				class="border border-solid border-black p-1 rounded-md"
+				type="button"
+				onClick={createCard}
+			>
 				Add
 			</button>
-			<button type="button" onClick={deleteCard}>
+			<button
+				class="border border-solid border-black p-1 rounded-md"
+				type="button"
+				onClick={deleteCard}
+			>
 				Remove
 			</button>
-		</form>
+		</Show>
 	);
 }
