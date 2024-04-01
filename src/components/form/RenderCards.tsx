@@ -3,6 +3,7 @@ import EducationCard from "./EducationCard";
 import ProfileCard from "@/components/form/ProfileCard";
 import VolunteerCard from "@/components/form/VolunteerCard";
 import WorkCard from "@/components/form/WorkCard";
+import AwardCard from "@/components/form/AwardCard";
 
 interface Props {
 	componentName: string;
@@ -15,6 +16,7 @@ const CARD = {
 	WorkCard,
 	VolunteerCard,
 	EducationCard,
+	AwardCard,
 };
 
 export default function RenderCards(props: Props) {
