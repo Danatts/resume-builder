@@ -10,7 +10,7 @@ import ReferenceCard from "@/components/form/ReferenceCard";
 import SkillCard from "@/components/form/SkillCard";
 import VolunteerCard from "@/components/form/VolunteerCard";
 import WorkCard from "@/components/form/WorkCard";
-import { Show, createSignal } from "solid-js";
+import { For, Show, createSignal } from "solid-js";
 
 interface Props {
 	componentName: string;
@@ -35,29 +35,21 @@ const CARD = {
 
 export default function RenderCards(props: Props) {
 	const Card = CARD[props.componentName];
-	const [elem, setElem] = createSignal<number>(1);
-
-	const renderCards = () => {
-		const children = [];
-		for (let i = 0; i < elem(); i++) {
-			children.push(<Card />);
-		}
-		return children;
-	};
+	const [elem, setElem] = createSignal<number[]>([0]);
 
 	const createCard = () => {
-		setElem((c) => c + 1);
+		setElem([...elem(), 0]);
 	};
 
 	const deleteCard = () => {
-		if (elem() > 0) setElem((c) => c - 1);
+		setElem(elem().slice(0, -1));
 	};
 
 	return (
 		<Show when={Card}>
 			<form id={props.formID} name={props.formID}>
 				<legend>{props.legend}</legend>
-				{renderCards()}
+				<For each={elem()}>{(_, index) => <Card key={index()} />}</For>
 			</form>
 			<button
 				class="border border-solid border-black p-1 rounded-md"
