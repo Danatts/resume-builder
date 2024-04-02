@@ -1,10 +1,24 @@
 import CameraIcon from "@/icons/CameraIcon";
 import placeholder from "@/resources/resumePlaceholder";
+import type { Basics } from "@/types";
+import { createSignal, onMount } from "solid-js";
+
 const { basics } = placeholder;
 
-export default function Basics() {
+export default function BasicsForm() {
+	let form: HTMLFormElement;
+	const [data, setData] = createSignal<Basics>();
+
+	onMount(() => {
+		form.addEventListener("input", (e) => {
+			const { name, value } = e.target as HTMLInputElement;
+			setData({ ...data(), [name]: value });
+			console.log(data());
+		});
+	});
+
 	return (
-		<form class="flex flex-col gap-3" id="basics" name="basics">
+		<form class="flex flex-col gap-3" ref={form} id="basics" name="basics">
 			<legend>Basics</legend>
 			<label for="name">
 				Name

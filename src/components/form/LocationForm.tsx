@@ -1,10 +1,24 @@
 import placeholder from "@/resources/resumePlaceholder";
+import type { Location } from "@/types";
+import { createSignal, onMount } from "solid-js";
+
 const { basics } = placeholder;
 const { location } = basics;
 
-export default function Location() {
+export default function LocationForm() {
+	let form: HTMLFormElement;
+	const [data, setData] = createSignal<Location>();
+
+	onMount(() => {
+		form.addEventListener("input", (e) => {
+			const { name, value } = e.target as HTMLInputElement;
+			setData({ ...data(), [name]: value });
+			console.log(data());
+		});
+	});
+
 	return (
-		<form id="location" name="location">
+		<form ref={form} id="location" name="location">
 			<legend>Location</legend>
 			<label for="region">
 				Country
