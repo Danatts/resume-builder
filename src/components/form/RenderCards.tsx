@@ -1,7 +1,6 @@
-import { createSignal, Show } from "solid-js";
 import AwardCard from "@/components/form/AwardCard";
 import CertificateCard from "@/components/form/CertificateCard";
-import EducationCard from "./EducationCard";
+import EducationCard from "@/components/form/EducationCard";
 import InterestCard from "@/components/form/InterestCard";
 import LanguageCard from "@/components/form/LanguageCard";
 import ProfileCard from "@/components/form/ProfileCard";
@@ -11,6 +10,7 @@ import ReferenceCard from "@/components/form/ReferenceCard";
 import SkillCard from "@/components/form/SkillCard";
 import VolunteerCard from "@/components/form/VolunteerCard";
 import WorkCard from "@/components/form/WorkCard";
+import { Show, createSignal } from "solid-js";
 
 interface Props {
 	componentName: string;

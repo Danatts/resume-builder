@@ -13,7 +13,6 @@ export default function LocationForm() {
 		form.addEventListener("input", (e) => {
 			const { name, value } = e.target as HTMLInputElement;
 			setData({ ...data(), [name]: value });
-			console.log(data());
 		});
 	});
 
