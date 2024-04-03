@@ -1,7 +1,7 @@
 import placeholder from "@/resources/resumePlaceholder";
 const { awards } = placeholder;
 
-export default function AwardCard() {
+export default function AwardForm() {
 	return (
 		<div class="flex flex-col gap-3 border-black border p-3 rounded-md">
 			<label for="title">

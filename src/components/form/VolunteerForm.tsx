@@ -1,12 +1,17 @@
 import resumePlaceholder from "@/resources/resumePlaceholder";
-const { work } = resumePlaceholder;
+const { volunteer } = resumePlaceholder;
 
-export default function WorkCard() {
+export default function VolunteerForm() {
 	return (
 		<div class="flex flex-col gap-3 border-black border p-3 rounded-md">
-			<label for="name">
-				Company
-				<input id="name" name="name" type="text" placeholder={work[0].name} />
+			<label for="organization">
+				Organization
+				<input
+					id="organization"
+					name="organization"
+					type="text"
+					placeholder={volunteer[0].organization}
+				/>
 			</label>
 			<label for="position">
 				Position
@@ -14,12 +19,12 @@ export default function WorkCard() {
 					id="position"
 					name="position"
 					type="text"
-					placeholder={work[0].position}
+					placeholder={volunteer[0].position}
 				/>
 			</label>
 			<label for="url">
 				Url
-				<input id="url" name="url" type="url" placeholder={work[0].url} />
+				<input id="url" name="url" type="url" placeholder={volunteer[0].url} />
 			</label>
 			<label for="startDate">
 				Starting date
@@ -31,7 +36,11 @@ export default function WorkCard() {
 			</label>
 			<label for="summary">
 				Summary
-				<textarea id="summary" name="summary" placeholder={work[0].summary} />
+				<textarea
+					id="summary"
+					name="summary"
+					placeholder={volunteer[0].summary}
+				/>
 			</label>
 			<label for="highlights">
 				Highlights
@@ -39,7 +48,7 @@ export default function WorkCard() {
 					id="highlights"
 					name="highlights"
 					type="text"
-					placeholder={work[0].highlights[0]}
+					placeholder={volunteer[0].highlights[0]}
 				/>
 			</label>
 		</div>

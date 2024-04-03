@@ -1,7 +1,7 @@
 import placeholder from "@/resources/resumePlaceholder";
 const { certificates } = placeholder;
 
-export default function CertificateCard() {
+export default function CertificateForm() {
 	return (
 		<div class="flex flex-col gap-3 border-black border p-3 rounded-md">
 			<label for="name">

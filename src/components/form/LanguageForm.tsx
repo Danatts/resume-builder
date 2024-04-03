@@ -1,7 +1,7 @@
 import placeholder from "@/resources/resumePlaceholder";
 const { languages } = placeholder;
 
-export default function LanguageCard() {
+export default function LanguageForm() {
 	return (
 		<div class="flex flex-col gap-3 border-black border p-3 rounded-md">
 			<label for="language">

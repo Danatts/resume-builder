@@ -1,7 +1,7 @@
 import resumePlaceholder from "@/resources/resumePlaceholder";
 const { education } = resumePlaceholder;
 
-export default function EducationCard() {
+export default function EducationForm() {
 	return (
 		<div class="flex flex-col gap-3 border-black border p-3 rounded-md">
 			<label for="institution">

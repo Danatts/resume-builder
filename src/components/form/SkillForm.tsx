@@ -1,7 +1,7 @@
 import placeholder from "@/resources/resumePlaceholder";
 const { skills } = placeholder;
 
-export default function SkillCard() {
+export default function SkillForm() {
 	return (
 		<div class="flex flex-col gap-3 border-black border p-3 rounded-md">
 			<label for="name">

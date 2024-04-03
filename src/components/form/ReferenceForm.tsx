@@ -1,24 +1,24 @@
 import placeholder from "@/resources/resumePlaceholder";
-const { interests } = placeholder;
+const { references } = placeholder;
 
-export default function InterestCard() {
+export default function ReferenceForm() {
 	return (
 		<div class="flex flex-col gap-3 border-black border p-3 rounded-md">
 			<label for="name">
 				Name
 				<input
-					placeholder={interests[0].name}
+					placeholder={references[0].name}
 					id="name"
 					name="name"
 					type="text"
 				/>
 			</label>
-			<label for="keywords">
-				Keywords
+			<label for="reference">
+				Reference
 				<input
-					placeholder={interests[0].keywords[0]}
-					id="keywords"
-					name="keywords"
+					placeholder={references[0].reference}
+					id="reference"
+					name="reference"
 					type="text"
 				/>
 			</label>

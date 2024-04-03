@@ -1,30 +1,21 @@
 import resumePlaceholder from "@/resources/resumePlaceholder";
-const { volunteer } = resumePlaceholder;
+const { projects } = resumePlaceholder;
 
-export default function VolunteerCard() {
+export default function ProjectForm() {
 	return (
 		<div class="flex flex-col gap-3 border-black border p-3 rounded-md">
-			<label for="organization">
-				Organization
+			<label for="name">
+				Name
 				<input
-					id="organization"
-					name="organization"
+					id="name"
+					name="name"
 					type="text"
-					placeholder={volunteer[0].organization}
-				/>
-			</label>
-			<label for="position">
-				Position
-				<input
-					id="position"
-					name="position"
-					type="text"
-					placeholder={volunteer[0].position}
+					placeholder={projects[0].name}
 				/>
 			</label>
 			<label for="url">
 				Url
-				<input id="url" name="url" type="url" placeholder={volunteer[0].url} />
+				<input id="url" name="url" type="url" placeholder={projects[0].url} />
 			</label>
 			<label for="startDate">
 				Starting date
@@ -34,12 +25,12 @@ export default function VolunteerCard() {
 				Ending date
 				<input id="endDate" name="endDate" type="date" />
 			</label>
-			<label for="summary">
-				Summary
+			<label for="description">
+				Description
 				<textarea
-					id="summary"
-					name="summary"
-					placeholder={volunteer[0].summary}
+					id="description"
+					name="description"
+					placeholder={projects[0].description}
 				/>
 			</label>
 			<label for="highlights">
@@ -48,7 +39,7 @@ export default function VolunteerCard() {
 					id="highlights"
 					name="highlights"
 					type="text"
-					placeholder={volunteer[0].highlights[0]}
+					placeholder={projects[0].highlights[0]}
 				/>
 			</label>
 		</div>

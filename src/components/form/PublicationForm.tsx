@@ -1,7 +1,7 @@
 import placeholder from "@/resources/resumePlaceholder";
 const { publications } = placeholder;
 
-export default function PublicationCard() {
+export default function PublicationForm() {
 	return (
 		<div class="flex flex-col gap-3 border-black border p-3 rounded-md">
 			<label for="name">

@@ -1,21 +1,25 @@
 import resumePlaceholder from "@/resources/resumePlaceholder";
-const { projects } = resumePlaceholder;
+const { work } = resumePlaceholder;
 
-export default function ProjectCard() {
+export default function WorkForm() {
 	return (
 		<div class="flex flex-col gap-3 border-black border p-3 rounded-md">
 			<label for="name">
-				Name
+				Company
+				<input id="name" name="name" type="text" placeholder={work[0].name} />
+			</label>
+			<label for="position">
+				Position
 				<input
-					id="name"
-					name="name"
+					id="position"
+					name="position"
 					type="text"
-					placeholder={projects[0].name}
+					placeholder={work[0].position}
 				/>
 			</label>
 			<label for="url">
 				Url
-				<input id="url" name="url" type="url" placeholder={projects[0].url} />
+				<input id="url" name="url" type="url" placeholder={work[0].url} />
 			</label>
 			<label for="startDate">
 				Starting date
@@ -25,13 +29,9 @@ export default function ProjectCard() {
 				Ending date
 				<input id="endDate" name="endDate" type="date" />
 			</label>
-			<label for="description">
-				Description
-				<textarea
-					id="description"
-					name="description"
-					placeholder={projects[0].description}
-				/>
+			<label for="summary">
+				Summary
+				<textarea id="summary" name="summary" placeholder={work[0].summary} />
 			</label>
 			<label for="highlights">
 				Highlights
@@ -39,7 +39,7 @@ export default function ProjectCard() {
 					id="highlights"
 					name="highlights"
 					type="text"
-					placeholder={projects[0].highlights[0]}
+					placeholder={work[0].highlights[0]}
 				/>
 			</label>
 		</div>

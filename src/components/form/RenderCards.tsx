@@ -1,16 +1,17 @@
-import AwardCard from "@/components/form/AwardCard";
-import CertificateCard from "@/components/form/CertificateCard";
-import EducationCard from "@/components/form/EducationCard";
-import InterestCard from "@/components/form/InterestCard";
-import LanguageCard from "@/components/form/LanguageCard";
-import ProfileCard from "@/components/form/ProfileCard";
-import ProjectCard from "@/components/form/ProjectCard";
-import PublicationCard from "@/components/form/PublicationCard";
-import ReferenceCard from "@/components/form/ReferenceCard";
-import SkillCard from "@/components/form/SkillCard";
-import VolunteerCard from "@/components/form/VolunteerCard";
-import WorkCard from "@/components/form/WorkCard";
-import { For, Show, createSignal } from "solid-js";
+import AwardForm from "@/components/form/AwardForm";
+import CertificateForm from "@/components/form/CertificateForm";
+import EducationForm from "@/components/form/EducationForm";
+import InterestForm from "@/components/form/InterestForm";
+import LanguageForm from "@/components/form/LanguageForm";
+import ProfileForm from "@/components/form/ProfileForm";
+import ProjectForm from "@/components/form/ProjectForm";
+import PublicationForm from "@/components/form/PublicationForm";
+import ReferenceForm from "@/components/form/ReferenceForm";
+import SkillForm from "@/components/form/SkillForm";
+import VolunteerForm from "@/components/form/VolunteerForm";
+import WorkForm from "@/components/form/WorkForm";
+import TrashIcon from "@/icons/TrashIcon";
+import { For, Show, createSignal, type JSXElement } from "solid-js";
 
 interface Props {
 	componentName: string;
@@ -18,23 +19,28 @@ interface Props {
 	legend: string;
 }
 
-const CARD = {
-	AwardCard,
-	CertificateCard,
-	EducationCard,
-	InterestCard,
-	LanguageCard,
-	ProfileCard,
-	ProjectCard,
-	PublicationCard,
-	ReferenceCard,
-	SkillCard,
-	WorkCard,
-	VolunteerCard,
+interface FormProps {
+	key: number;
+}
+
+const FORM = {
+	AwardForm,
+	CertificateForm,
+	EducationForm,
+	InterestForm,
+	LanguageForm,
+	ProfileForm,
+	ProjectForm,
+	PublicationForm,
+	ReferenceForm,
+	SkillForm,
+	WorkForm,
+	VolunteerForm,
 };
 
 export default function RenderCards(props: Props) {
-	const Card = CARD[props.componentName];
+	const Form: (props: FormProps) => JSXElement | null =
+		FORM[props.componentName];
 	const [elem, setElem] = createSignal<number[]>([0]);
 
 	const createCard = () => {
@@ -46,10 +52,16 @@ export default function RenderCards(props: Props) {
 	};
 
 	return (
-		<Show when={Card}>
+		<Show when={Form}>
 			<form id={props.formID} name={props.formID}>
 				<legend>{props.legend}</legend>
-				<For each={elem()}>{(_, index) => <Card key={index()} />}</For>
+				<For each={elem()}>
+					{(_, index) => (
+						<div class="">
+							<Form key={index()} />
+						</div>
+					)}
+				</For>
 			</form>
 			<button
 				class="border border-solid border-black p-1 rounded-md"
@@ -63,7 +75,7 @@ export default function RenderCards(props: Props) {
 				type="button"
 				onClick={deleteCard}
 			>
-				Remove
+				<TrashIcon size={20} />
 			</button>
 		</Show>
 	);
