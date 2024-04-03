@@ -3,7 +3,7 @@ const { publications } = placeholder;
 
 export default function PublicationForm() {
 	return (
-		<div class="flex flex-col gap-3 border-black border p-3 rounded-md">
+		<fieldset>
 			<label for="name">
 				Name
 				<input
@@ -43,6 +43,6 @@ export default function PublicationForm() {
 					placeholder={publications[0].summary}
 				/>
 			</label>
-		</div>
+		</fieldset>
 	);
 }

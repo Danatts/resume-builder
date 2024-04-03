@@ -3,7 +3,7 @@ const { interests } = placeholder;
 
 export default function InterestForm() {
 	return (
-		<div class="flex flex-col gap-3 border-black border p-3 rounded-md">
+		<fieldset>
 			<label for="name">
 				Name
 				<input
@@ -22,6 +22,6 @@ export default function InterestForm() {
 					type="text"
 				/>
 			</label>
-		</div>
+		</fieldset>
 	);
 }

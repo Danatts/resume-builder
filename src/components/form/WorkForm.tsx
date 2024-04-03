@@ -3,7 +3,7 @@ const { work } = resumePlaceholder;
 
 export default function WorkForm() {
 	return (
-		<div class="flex flex-col gap-3 border-black border p-3 rounded-md">
+		<fieldset>
 			<label for="name">
 				Company
 				<input id="name" name="name" type="text" placeholder={work[0].name} />
@@ -42,6 +42,6 @@ export default function WorkForm() {
 					placeholder={work[0].highlights[0]}
 				/>
 			</label>
-		</div>
+		</fieldset>
 	);
 }

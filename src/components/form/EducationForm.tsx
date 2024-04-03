@@ -3,7 +3,7 @@ const { education } = resumePlaceholder;
 
 export default function EducationForm() {
 	return (
-		<div class="flex flex-col gap-3 border-black border p-3 rounded-md">
+		<fieldset>
 			<label for="institution">
 				Institution
 				<input
@@ -61,6 +61,6 @@ export default function EducationForm() {
 					placeholder={education[0].courses[0]}
 				/>
 			</label>
-		</div>
+		</fieldset>
 	);
 }

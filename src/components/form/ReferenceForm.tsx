@@ -3,7 +3,7 @@ const { references } = placeholder;
 
 export default function ReferenceForm() {
 	return (
-		<div class="flex flex-col gap-3 border-black border p-3 rounded-md">
+		<fieldset>
 			<label for="name">
 				Name
 				<input
@@ -22,6 +22,6 @@ export default function ReferenceForm() {
 					type="text"
 				/>
 			</label>
-		</div>
+		</fieldset>
 	);
 }

@@ -23,6 +23,10 @@ interface FormProps {
 	key: number;
 }
 
+interface CardProps {
+	children: JSXElement;
+}
+
 const FORM = {
 	AwardForm,
 	CertificateForm,
@@ -38,9 +42,21 @@ const FORM = {
 	VolunteerForm,
 };
 
-export default function RenderCards(props: Props) {
+function Card(props: CardProps) {
+	return (
+		<div class="border p-3 flex flex-col rounded-md border-black">
+			<button class="w-fit self-end" type="button">
+				<TrashIcon size={18} />
+			</button>
+			{props.children}
+		</div>
+	);
+}
+
+export default function ListCards(props: Props) {
 	const Form: (props: FormProps) => JSXElement | null =
 		FORM[props.componentName];
+
 	const [elem, setElem] = createSignal<number[]>([0]);
 
 	const createCard = () => {
@@ -57,26 +73,19 @@ export default function RenderCards(props: Props) {
 				<legend>{props.legend}</legend>
 				<For each={elem()}>
 					{(_, index) => (
-						<div class="">
+						<Card>
 							<Form key={index()} />
-						</div>
+						</Card>
 					)}
 				</For>
+				<button
+					class="border border-black p-1 rounded-md"
+					type="button"
+					onClick={createCard}
+				>
+					Add
+				</button>
 			</form>
-			<button
-				class="border border-solid border-black p-1 rounded-md"
-				type="button"
-				onClick={createCard}
-			>
-				Add
-			</button>
-			<button
-				class="border border-solid border-black p-1 rounded-md"
-				type="button"
-				onClick={deleteCard}
-			>
-				<TrashIcon size={20} />
-			</button>
 		</Show>
 	);
 }

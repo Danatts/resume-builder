@@ -13,10 +13,11 @@
     }
 
     legend {
-        @apply text-xl font-bold mb-2;
+        @apply text-xl font-bold;
     }
 
-    form {
-        @apply flex flex-col gap-3 mb-3;
+    form,
+    fieldset {
+        @apply flex flex-col gap-4 mb-4;
     }
 }

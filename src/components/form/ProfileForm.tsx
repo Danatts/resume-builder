@@ -20,10 +20,7 @@ export default function ProfileForm(props: Props) {
 	});
 
 	return (
-		<fieldset
-			ref={field}
-			class="flex flex-col gap-3 border-black border p-3 rounded-md"
-		>
+		<fieldset ref={field}>
 			<label for="network">
 				Network
 				<input

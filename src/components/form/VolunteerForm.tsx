@@ -3,7 +3,7 @@ const { volunteer } = resumePlaceholder;
 
 export default function VolunteerForm() {
 	return (
-		<div class="flex flex-col gap-3 border-black border p-3 rounded-md">
+		<fieldset>
 			<label for="organization">
 				Organization
 				<input
@@ -51,6 +51,6 @@ export default function VolunteerForm() {
 					placeholder={volunteer[0].highlights[0]}
 				/>
 			</label>
-		</div>
+		</fieldset>
 	);
 }

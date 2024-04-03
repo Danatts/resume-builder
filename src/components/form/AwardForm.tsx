@@ -3,7 +3,7 @@ const { awards } = placeholder;
 
 export default function AwardForm() {
 	return (
-		<div class="flex flex-col gap-3 border-black border p-3 rounded-md">
+		<fieldset>
 			<label for="title">
 				Title
 				<input
@@ -30,6 +30,6 @@ export default function AwardForm() {
 				Summary
 				<textarea id="summary" name="summary" placeholder={awards[0].summary} />
 			</label>
-		</div>
+		</fieldset>
 	);
 }

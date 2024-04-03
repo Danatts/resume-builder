@@ -3,7 +3,7 @@ const { skills } = placeholder;
 
 export default function SkillForm() {
 	return (
-		<div class="flex flex-col gap-3 border-black border p-3 rounded-md">
+		<fieldset>
 			<label for="name">
 				Name
 				<input placeholder={skills[0].name} id="name" name="name" type="text" />
@@ -26,6 +26,6 @@ export default function SkillForm() {
 					type="text"
 				/>
 			</label>
-		</div>
+		</fieldset>
 	);
 }

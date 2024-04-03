@@ -3,7 +3,7 @@ const { projects } = resumePlaceholder;
 
 export default function ProjectForm() {
 	return (
-		<div class="flex flex-col gap-3 border-black border p-3 rounded-md">
+		<fieldset>
 			<label for="name">
 				Name
 				<input
@@ -42,6 +42,6 @@ export default function ProjectForm() {
 					placeholder={projects[0].highlights[0]}
 				/>
 			</label>
-		</div>
+		</fieldset>
 	);
 }

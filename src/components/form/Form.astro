@@ -1,80 +1,80 @@
 ---
 import BasicsForm from "@/components/form/BasicsForm";
+import ListCards from "@/components/form/ListCards";
 import LocationForm from "@/components/form/LocationForm";
-import RenderCards from "@/components/form/RenderCards";
 import "@/styles/main.css";
 ---
 
 <div class="p-4 flow" id="form">
     <BasicsForm client:load />
     <LocationForm client:load />
-    <RenderCards
+    <ListCards
         componentName={"ProfileForm"}
         legend={"Profiles"}
         formID={"profiles"}
         client:load
     />
-    <RenderCards
+    <ListCards
         componentName={"WorkForm"}
         legend={"Work Experience"}
         formID={"work"}
         client:load
     />
-    <RenderCards
+    <ListCards
         componentName={"VolunteerForm"}
         legend={"Volunteers"}
         formID={"volunteer"}
         client:load
     />
-    <RenderCards
+    <ListCards
         componentName={"EducationForm"}
         legend={"Education"}
         formID={"education"}
         client:load
     />
-    <RenderCards
+    <ListCards
         componentName={"AwardForm"}
         legend={"Awards"}
         formID={"awards"}
         client:load
     />
-    <RenderCards
+    <ListCards
         componentName={"CertificateForm"}
         legend={"Certificates"}
         formID={"certificates"}
         client:load
     />
-    <RenderCards
+    <ListCards
         componentName={"PublicationForm"}
         legend={"Publications"}
         formID={"publications"}
         client:load
     />
-    <RenderCards
+    <ListCards
         componentName={"SkillForm"}
         legend={"Skills"}
         formID={"skills"}
         client:load
     />
-    <RenderCards
+    <ListCards
         componentName={"LanguageForm"}
         legend={"Languages"}
         formID={"languages"}
         client:load
     />
-    <RenderCards
+    <ListCards
         componentName={"InterestForm"}
         legend={"Interests"}
         formID={"interests"}
         client:load
     />
-    <RenderCards
+    <ListCards
         componentName={"ReferenceForm"}
         legend={"References"}
         formID={"references"}
         client:load
     />
-    <RenderCards
+    <ListCards
         componentName={"ProjectForm"}
         legend={"Projects"}
         formID={"projects"}

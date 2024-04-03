@@ -3,7 +3,7 @@ const { languages } = placeholder;
 
 export default function LanguageForm() {
 	return (
-		<div class="flex flex-col gap-3 border-black border p-3 rounded-md">
+		<fieldset>
 			<label for="language">
 				Language
 				<input
@@ -22,6 +22,6 @@ export default function LanguageForm() {
 					type="text"
 				/>
 			</label>
-		</div>
+		</fieldset>
 	);
 }

@@ -3,7 +3,7 @@ const { certificates } = placeholder;
 
 export default function CertificateForm() {
 	return (
-		<div class="flex flex-col gap-3 border-black border p-3 rounded-md">
+		<fieldset>
 			<label for="name">
 				Name
 				<input
@@ -35,6 +35,6 @@ export default function CertificateForm() {
 					placeholder={certificates[0].url}
 				/>
 			</label>
-		</div>
+		</fieldset>
 	);
 }
