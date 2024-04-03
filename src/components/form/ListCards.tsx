@@ -43,7 +43,7 @@ const FORM = {
 function Card(props: CardProps) {
 	return (
 		<div class="border p-3 flex flex-col rounded-md border-black">
-			<h1>{`ID: ${props.key}`}</h1>
+			<h1>{props.key}</h1>
 			<button
 				class="w-fit self-end"
 				type="button"
@@ -59,23 +59,24 @@ function Card(props: CardProps) {
 export default function ListCards(props: Props) {
 	const Form: () => JSXElement | null = FORM[props.componentName];
 
-	const [elem, setElem] = createSignal<number[]>([]);
+	const [list, setList] = createSignal([]);
 
-	function createCard() {
-		setElem([...elem(), 0]);
+	function addCard() {
+		setList([...list(), {}]);
 	}
 
-	function deleteCard(id: number) {
-		setElem(elem().toSpliced(id, 1));
+	function removeCard(id: number) {
+		setList(list().filter((_, i) => i !== id));
+		console.log(id);
 	}
 
 	return (
 		<Show when={Form}>
 			<form id={props.formID} name={props.formID}>
 				<legend>{props.legend}</legend>
-				<For each={elem()}>
-					{(comp, index) => (
-						<Card key={index()} delete={deleteCard}>
+				<For each={list()}>
+					{(_, index) => (
+						<Card key={index()} delete={removeCard}>
 							<Form />
 						</Card>
 					)}
@@ -83,7 +84,7 @@ export default function ListCards(props: Props) {
 				<button
 					class="border border-black p-1 rounded-md"
 					type="button"
-					onClick={createCard}
+					onClick={addCard}
 				>
 					Add
 				</button>
