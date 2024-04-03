@@ -19,12 +19,10 @@ interface Props {
 	legend: string;
 }
 
-interface FormProps {
-	key: number;
-}
-
 interface CardProps {
 	children: JSXElement;
+	delete(id: number): void;
+	key: number;
 }
 
 const FORM = {
@@ -45,7 +43,12 @@ const FORM = {
 function Card(props: CardProps) {
 	return (
 		<div class="border p-3 flex flex-col rounded-md border-black">
-			<button class="w-fit self-end" type="button">
+			<h1>{`ID: ${props.key}`}</h1>
+			<button
+				class="w-fit self-end"
+				type="button"
+				onClick={() => props.delete(props.key)}
+			>
 				<TrashIcon size={18} />
 			</button>
 			{props.children}
@@ -54,27 +57,26 @@ function Card(props: CardProps) {
 }
 
 export default function ListCards(props: Props) {
-	const Form: (props: FormProps) => JSXElement | null =
-		FORM[props.componentName];
+	const Form: () => JSXElement | null = FORM[props.componentName];
 
-	const [elem, setElem] = createSignal<number[]>([0]);
+	const [elem, setElem] = createSignal<number[]>([]);
 
-	const createCard = () => {
+	function createCard() {
 		setElem([...elem(), 0]);
-	};
+	}
 
-	const deleteCard = () => {
-		setElem(elem().slice(0, -1));
-	};
+	function deleteCard(id: number) {
+		setElem(elem().toSpliced(id, 1));
+	}
 
 	return (
 		<Show when={Form}>
 			<form id={props.formID} name={props.formID}>
 				<legend>{props.legend}</legend>
 				<For each={elem()}>
-					{(_, index) => (
-						<Card>
-							<Form key={index()} />
+					{(comp, index) => (
+						<Card key={index()} delete={deleteCard}>
+							<Form />
 						</Card>
 					)}
 				</For>
