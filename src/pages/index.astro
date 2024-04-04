@@ -1,7 +1,7 @@
 ---
+import FormPanel from "@/components/FormPanel.astro";
 import Panel from "@/components/Panel.astro";
-import Form from "@/components/form/Form.astro";
-//import Template from "@/components/preview/Template";
+import PreviewPanel from "@/components/PreviewPanel";
 ---
 
 <html lang="en">
@@ -15,11 +15,11 @@ import Form from "@/components/form/Form.astro";
 	<body>
 		<div class="md:grid md:grid-cols-2 h-screen">
 			<Panel>
-				<Form />
+				<FormPanel />
 			</Panel>
-			<!-- <Panel>
-				<Template client:only="solid-js" />
-			</Panel> -->
+			<Panel>
+				<PreviewPanel client:only="solid-js" />
+			</Panel>
 		</div>
 	</body>
 </html>

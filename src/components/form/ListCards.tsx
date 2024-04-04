@@ -43,7 +43,6 @@ const FORM = {
 function Card(props: CardProps) {
 	return (
 		<div class="border p-3 flex flex-col rounded-md border-black">
-			<h1>{props.key}</h1>
 			<button
 				class="w-fit self-end"
 				type="button"
@@ -67,7 +66,6 @@ export default function ListCards(props: Props) {
 
 	function removeCard(id: number) {
 		setList(list().filter((_, i) => i !== id));
-		console.log(id);
 	}
 
 	return (

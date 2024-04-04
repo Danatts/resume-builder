@@ -1,3 +1,4 @@
+import useResumeContext from "@/hooks/useResumeContext";
 import CameraIcon from "@/icons/CameraIcon";
 import placeholder from "@/resources/resumePlaceholder";
 import type { Basics } from "@/types";
@@ -8,6 +9,7 @@ const { basics } = placeholder;
 export default function BasicsForm() {
 	let form: HTMLFormElement;
 	const [data, setData] = createSignal<Basics>();
+	const { store } = useResumeContext();
 
 	onMount(() => {
 		form.addEventListener("input", (e) => {
