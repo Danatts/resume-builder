@@ -2,8 +2,9 @@ import BasicsForm from "@/components/form/BasicsForm";
 import ListCards from "@/components/form/ListCards";
 import LocationForm from "@/components/form/LocationForm";
 import { ResumeProvider } from "@/contexts/ResumeContext";
+import "@/styles/main.css";
 
-export default function Form() {
+export default function FormPanel() {
 	return (
 		<ResumeProvider>
 			<BasicsForm />

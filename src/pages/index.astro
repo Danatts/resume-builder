@@ -1,5 +1,5 @@
 ---
-import FormPanel from "@/components/FormPanel.astro";
+import FormPanel from "@/components/FormPanel";
 import Panel from "@/components/Panel.astro";
 import PreviewPanel from "@/components/PreviewPanel";
 ---
@@ -15,10 +15,10 @@ import PreviewPanel from "@/components/PreviewPanel";
 	<body>
 		<div class="md:grid md:grid-cols-2 h-screen">
 			<Panel>
-				<FormPanel />
+				<FormPanel client:load />
 			</Panel>
 			<Panel>
-				<PreviewPanel client:only="solid-js" />
+				<PreviewPanel client:load />
 			</Panel>
 		</div>
 	</body>
