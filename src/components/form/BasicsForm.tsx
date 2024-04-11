@@ -9,7 +9,7 @@ const { basics } = placeholder;
 export default function BasicsForm() {
 	let form: HTMLFormElement;
 	const [data, setData] = createSignal<Basics>();
-	const { store, setStore } = useResumeContext();
+	const { setStore } = useResumeContext();
 
 	onMount(() => {
 		form.addEventListener("input", (e) => {

@@ -11,7 +11,7 @@ import SkillForm from "@/components/form/SkillForm";
 import VolunteerForm from "@/components/form/VolunteerForm";
 import WorkForm from "@/components/form/WorkForm";
 import TrashIcon from "@/icons/TrashIcon";
-import { For, Show, createSignal, type JSXElement } from "solid-js";
+import { For, type JSXElement, Show, createSignal } from "solid-js";
 
 interface Props {
 	componentName: string;

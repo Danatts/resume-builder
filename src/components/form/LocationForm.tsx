@@ -1,3 +1,4 @@
+import useResumeContext from "@/hooks/useResumeContext";
 import placeholder from "@/resources/resumePlaceholder";
 import type { Location } from "@/types";
 import { createSignal, onMount } from "solid-js";
@@ -8,11 +9,13 @@ const { location } = basics;
 export default function LocationForm() {
 	let form: HTMLFormElement;
 	const [data, setData] = createSignal<Location>();
+	const { setStore } = useResumeContext();
 
 	onMount(() => {
 		form.addEventListener("input", (e) => {
 			const { name, value } = e.target as HTMLInputElement;
 			setData({ ...data(), [name]: value });
+			setStore("basics", "location", data());
 		});
 	});
 
