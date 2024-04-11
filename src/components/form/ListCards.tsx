@@ -10,19 +10,14 @@ import ReferenceForm from "@/components/form/ReferenceForm";
 import SkillForm from "@/components/form/SkillForm";
 import VolunteerForm from "@/components/form/VolunteerForm";
 import WorkForm from "@/components/form/WorkForm";
-import TrashIcon from "@/icons/TrashIcon";
-import { For, type JSXElement, Show, createSignal } from "solid-js";
+import Card from "@/components/utils/Card";
+import type { JSXElement } from "solid-js";
+import { For, Show, createSignal } from "solid-js";
 
 interface Props {
 	componentName: string;
 	formID: string;
 	legend: string;
-}
-
-interface CardProps {
-	children: JSXElement;
-	delete(id: number): void;
-	key: number;
 }
 
 const FORM = {
@@ -39,21 +34,6 @@ const FORM = {
 	WorkForm,
 	VolunteerForm,
 };
-
-function Card(props: CardProps) {
-	return (
-		<div class="border p-3 flex flex-col rounded-md border-black">
-			<button
-				class="w-fit self-end"
-				type="button"
-				onClick={() => props.delete(props.key)}
-			>
-				<TrashIcon size={18} />
-			</button>
-			{props.children}
-		</div>
-	);
-}
 
 export default function ListCards(props: Props) {
 	const Form: () => JSXElement | null = FORM[props.componentName];
@@ -75,7 +55,7 @@ export default function ListCards(props: Props) {
 				<For each={list()}>
 					{(_, index) => (
 						<Card key={index()} delete={removeCard}>
-							<Form />
+							<Form key={index()} />
 						</Card>
 					)}
 				</For>
