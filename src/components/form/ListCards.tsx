@@ -12,12 +12,15 @@ import SkillForm from "@/components/form/SkillForm";
 import VolunteerForm from "@/components/form/VolunteerForm";
 import WorkForm from "@/components/form/WorkForm";
 import useResumeContext from "@/hooks/useResumeContext";
+import type { Resume } from "@/types";
 import type { JSXElement } from "solid-js";
 import { For, Show, createSignal } from "solid-js";
+import type { Part } from "solid-js/store";
 
 interface Props {
 	componentName: string;
-	formID: string;
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	formID: string | Part<Resume, any>;
 	legend: string;
 }
 
