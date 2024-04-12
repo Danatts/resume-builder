@@ -5,13 +5,13 @@ interface Props {
 export default function TrashIcon(props: Props) {
 	return (
 		<svg
-			viewBox="0 0 24 24"
-			stroke-width="1.5"
 			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-			color="#000000"
-			width={props.size}
 			height={props.size}
+			stroke-width="1.5"
+			stroke="currentColor"
+			viewBox="0 0 24 24"
+			width={props.size}
+			xmlns="http://www.w3.org/2000/svg"
 		>
 			<title>Trash Icon</title>
 			<path
