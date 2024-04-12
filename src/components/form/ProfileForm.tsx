@@ -1,15 +1,11 @@
 import useResumeContext from "@/hooks/useResumeContext";
 import placeholder from "@/resources/resumePlaceholder";
-import type { Profile } from "@/types";
+import type { FormProps, Profile } from "@/types";
 import { createSignal, onMount } from "solid-js";
 const { basics } = placeholder;
 const { profiles } = basics;
 
-interface Props {
-	key: number;
-}
-
-export default function ProfileForm(props: Props) {
+export default function ProfileForm(props: FormProps) {
 	let field: HTMLFieldSetElement;
 	const [data, setData] = createSignal<Profile>();
 	const { setStore } = useResumeContext();

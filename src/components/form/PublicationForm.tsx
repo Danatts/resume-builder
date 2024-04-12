@@ -1,9 +1,24 @@
+import useResumeContext from "@/hooks/useResumeContext";
 import placeholder from "@/resources/resumePlaceholder";
+import type { FormProps, Publication } from "@/types";
+import { createSignal, onMount } from "solid-js";
 const { publications } = placeholder;
 
-export default function PublicationForm() {
+export default function PublicationForm(props: FormProps) {
+	let field: HTMLFieldSetElement;
+	const [data, setData] = createSignal<Publication>();
+	const { setStore } = useResumeContext();
+
+	onMount(() => {
+		field.addEventListener("input", (e) => {
+			const { name, value } = e.target as HTMLInputElement;
+			setData({ ...data(), [name]: value });
+			setStore("publications", props.key, data());
+		});
+	});
+
 	return (
-		<fieldset>
+		<fieldset ref={field}>
 			<label for="name">
 				Name
 				<input

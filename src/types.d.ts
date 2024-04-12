@@ -121,3 +121,7 @@ export type Project = {
 	highlights?: string[];
 	url?: string;
 };
+
+export type FormProps = {
+	key?: number;
+};

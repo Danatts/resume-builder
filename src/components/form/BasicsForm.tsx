@@ -20,7 +20,7 @@ export default function BasicsForm() {
 	});
 
 	return (
-		<form class="flex flex-col gap-3" ref={form} id="basics" name="basics">
+		<form ref={form} id="basics" name="basics">
 			<legend>Basics</legend>
 			<label for="name">
 				Name
@@ -52,7 +52,7 @@ export default function BasicsForm() {
 				<textarea placeholder={basics.summary} id="summary" name="summary" />
 			</label>
 			<label
-				class="active:scale-95 rounded-md flex flex-col items-center cursor-pointer p-2 self-center border w-full"
+				class=" active:scale-95 rounded-md flex flex-col items-center cursor-pointer p-2 self-center border w-full"
 				for="image"
 			>
 				<input

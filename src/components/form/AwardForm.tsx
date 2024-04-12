@@ -1,9 +1,24 @@
+import useResumeContext from "@/hooks/useResumeContext";
 import placeholder from "@/resources/resumePlaceholder";
+import type { Award, FormProps } from "@/types";
+import { createSignal, onMount } from "solid-js";
 const { awards } = placeholder;
 
-export default function AwardForm() {
+export default function AwardForm(props: FormProps) {
+	let field: HTMLFieldSetElement;
+	const [data, setData] = createSignal<Award>();
+	const { setStore } = useResumeContext();
+
+	onMount(() => {
+		field.addEventListener("input", (e) => {
+			const { name, value } = e.target as HTMLInputElement;
+			setData({ ...data(), [name]: value });
+			setStore("awards", props.key, data());
+		});
+	});
+
 	return (
-		<fieldset>
+		<fieldset ref={field}>
 			<label for="title">
 				Title
 				<input

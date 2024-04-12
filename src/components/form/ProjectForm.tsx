@@ -1,9 +1,24 @@
+import useResumeContext from "@/hooks/useResumeContext";
 import resumePlaceholder from "@/resources/resumePlaceholder";
+import type { FormProps, Project } from "@/types";
+import { createSignal, onMount } from "solid-js";
 const { projects } = resumePlaceholder;
 
-export default function ProjectForm() {
+export default function ProjectForm(props: FormProps) {
+	let field: HTMLFieldSetElement;
+	const [data, setData] = createSignal<Project>();
+	const { setStore } = useResumeContext();
+
+	onMount(() => {
+		field.addEventListener("input", (e) => {
+			const { name, value } = e.target as HTMLInputElement;
+			setData({ ...data(), [name]: value });
+			setStore("projects", props.key, data());
+		});
+	});
+
 	return (
-		<fieldset>
+		<fieldset ref={field}>
 			<label for="name">
 				Name
 				<input

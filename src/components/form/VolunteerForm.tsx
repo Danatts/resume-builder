@@ -1,9 +1,24 @@
+import useResumeContext from "@/hooks/useResumeContext";
 import resumePlaceholder from "@/resources/resumePlaceholder";
+import type { FormProps, Volunteer } from "@/types";
+import { createSignal, onMount } from "solid-js";
 const { volunteer } = resumePlaceholder;
 
-export default function VolunteerForm() {
+export default function VolunteerForm(props: FormProps) {
+	let field: HTMLFieldSetElement;
+	const [data, setData] = createSignal<Volunteer>();
+	const { setStore } = useResumeContext();
+
+	onMount(() => {
+		field.addEventListener("input", (e) => {
+			const { name, value } = e.target as HTMLInputElement;
+			setData({ ...data(), [name]: value });
+			setStore("volunteer", props.key, data());
+		});
+	});
+
 	return (
-		<fieldset>
+		<fieldset ref={field}>
 			<label for="organization">
 				Organization
 				<input

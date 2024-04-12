@@ -1,9 +1,24 @@
+import useResumeContext from "@/hooks/useResumeContext";
 import placeholder from "@/resources/resumePlaceholder";
+import type { FormProps, Interest } from "@/types";
+import { createSignal, onMount } from "solid-js";
 const { interests } = placeholder;
 
-export default function InterestForm() {
+export default function InterestForm(props: FormProps) {
+	let field: HTMLFieldSetElement;
+	const [data, setData] = createSignal<Interest>();
+	const { setStore } = useResumeContext();
+
+	onMount(() => {
+		field.addEventListener("input", (e) => {
+			const { name, value } = e.target as HTMLInputElement;
+			setData({ ...data(), [name]: value });
+			setStore("interests", props.key, data());
+		});
+	});
+
 	return (
-		<fieldset>
+		<fieldset ref={field}>
 			<label for="name">
 				Name
 				<input

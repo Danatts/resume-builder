@@ -1,14 +1,10 @@
 import useResumeContext from "@/hooks/useResumeContext";
 import resumePlaceholder from "@/resources/resumePlaceholder";
-import type { Work } from "@/types";
+import type { FormProps, Work } from "@/types";
 import { createSignal, onMount } from "solid-js";
 const { work } = resumePlaceholder;
 
-interface Props {
-	key: number;
-}
-
-export default function WorkForm(props: Props) {
+export default function WorkForm(props: FormProps) {
 	let field: HTMLFieldSetElement;
 	const [data, setData] = createSignal<Work>();
 	const { setStore } = useResumeContext();

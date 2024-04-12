@@ -1,12 +1,5 @@
 export default {
 	basics: {
-		name: "",
-		label: "",
-		image: "",
-		email: "",
-		phone: "",
-		url: "",
-		summary: "",
 		location: {},
 		profiles: [],
 	},
