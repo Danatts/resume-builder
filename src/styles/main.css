@@ -3,13 +3,17 @@
 @tailwind utilities;
 
 @layer base {
+    :root {
+        color-scheme: light dark;
+    }
+
     label {
         @apply flex flex-col gap-1 font-medium;
     }
 
     input,
     textarea {
-        @apply border border-black border-solid p-1 rounded-md font-normal;
+        @apply border border-solid p-1 rounded-md font-normal;
     }
 
     legend {

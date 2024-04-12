@@ -59,11 +59,7 @@ export default function ListCards(props: Props) {
 						</Card>
 					)}
 				</For>
-				<button
-					class="border border-black p-1 rounded-md"
-					type="button"
-					onClick={addCard}
-				>
+				<button class="border p-1 rounded-md" type="button" onClick={addCard}>
 					Add
 				</button>
 			</form>

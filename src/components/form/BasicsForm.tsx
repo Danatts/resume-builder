@@ -52,7 +52,7 @@ export default function BasicsForm() {
 				<textarea placeholder={basics.summary} id="summary" name="summary" />
 			</label>
 			<label
-				class="hover:bg-slate-100 active:scale-95 rounded-md flex flex-col items-center cursor-pointer p-2 self-center border border-black w-full"
+				class="active:scale-95 rounded-md flex flex-col items-center cursor-pointer p-2 self-center border w-full"
 				for="image"
 			>
 				<input
