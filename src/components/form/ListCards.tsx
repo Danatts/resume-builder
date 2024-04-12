@@ -11,6 +11,7 @@ import SkillForm from "@/components/form/SkillForm";
 import VolunteerForm from "@/components/form/VolunteerForm";
 import WorkForm from "@/components/form/WorkForm";
 import Card from "@/components/utils/Card";
+import useResumeContext from "@/hooks/useResumeContext";
 import type { JSXElement } from "solid-js";
 import { For, Show, createSignal } from "solid-js";
 
@@ -40,12 +41,23 @@ export default function ListCards(props: Props) {
 
 	const [list, setList] = createSignal([]);
 
+	const { store, setStore } = useResumeContext();
+
 	function addCard() {
 		setList([...list(), {}]);
 	}
 
 	function removeCard(id: number) {
 		setList(list().filter((_, i) => i !== id));
+		if (props.formID === "profiles") {
+			setStore(
+				"basics",
+				"profiles",
+				[...store.basics.profiles].toSpliced(id, 1),
+			);
+		} else {
+			setStore(props.formID, [...store[props.formID]].toSpliced(id, 1));
+		}
 	}
 
 	return (

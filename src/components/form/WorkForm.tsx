@@ -1,9 +1,28 @@
+import useResumeContext from "@/hooks/useResumeContext";
 import resumePlaceholder from "@/resources/resumePlaceholder";
+import type { Work } from "@/types";
+import { createSignal, onMount } from "solid-js";
 const { work } = resumePlaceholder;
 
-export default function WorkForm() {
+interface Props {
+	key: number;
+}
+
+export default function WorkForm(props: Props) {
+	let field: HTMLFieldSetElement;
+	const [data, setData] = createSignal<Work>();
+	const { setStore } = useResumeContext();
+
+	onMount(() => {
+		field.addEventListener("input", (e) => {
+			const { name, value } = e.target as HTMLInputElement;
+			setData({ ...data(), [name]: value });
+			setStore("work", props.key, data());
+		});
+	});
+
 	return (
-		<fieldset>
+		<fieldset ref={field}>
 			<label for="name">
 				Company
 				<input id="name" name="name" type="text" placeholder={work[0].name} />

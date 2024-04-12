@@ -9,7 +9,7 @@ interface Props {
 
 export default function Card(props: Props) {
 	return (
-		<div class="border p-3 flex flex-col rounded-md border-black">
+		<div class="border p-3 flex flex-col rounded-md">
 			<button
 				class="w-fit self-end"
 				type="button"
