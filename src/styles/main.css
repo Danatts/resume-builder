@@ -13,7 +13,7 @@
 
     input,
     textarea {
-        @apply border border-solid p-1 rounded-md font-normal;
+        @apply border border-solid py-1 px-2 rounded-md font-normal;
     }
 
     legend {

@@ -1,4 +1,3 @@
-import Card from "@/components/common/Card";
 import AwardForm from "@/components/form/AwardForm";
 import CertificateForm from "@/components/form/CertificateForm";
 import EducationForm from "@/components/form/EducationForm";
@@ -11,6 +10,7 @@ import ReferenceForm from "@/components/form/ReferenceForm";
 import SkillForm from "@/components/form/SkillForm";
 import VolunteerForm from "@/components/form/VolunteerForm";
 import WorkForm from "@/components/form/WorkForm";
+import Card from "@/components/form/common/Card";
 import useResumeContext from "@/hooks/useResumeContext";
 import type { Resume } from "@/types";
 import type { JSXElement } from "solid-js";
