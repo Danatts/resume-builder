@@ -6,7 +6,7 @@ export default function AboutPreview() {
 	const { store } = useResumeContext();
 
 	return (
-		<Section>
+		<Section title={"About me"}>
 			<Text>{store.basics.summary}</Text>
 		</Section>
 	);

@@ -42,7 +42,7 @@ export default function EducationForm(props: FormProps) {
 				<input id="url" name="url" type="url" placeholder={education[0].url} />
 			</label>
 			<label for="studyType">
-				Area
+				Type
 				<input
 					id="studyType"
 					name="studyType"
