@@ -1,16 +1,9 @@
-import Section from "@/components/preview/Section";
+import Section from "@/components/preview/common/SectionStyle";
 import useResumeContext from "@/hooks/useResumeContext";
 import { Show, onMount } from "solid-js";
 
 export default function BasicsPreview() {
-	const { store, setStore } = useResumeContext();
-
-	const $basics = document.querySelector("#basics");
-	$basics.addEventListener("input", (e) => {
-		const { name, value } = e.target as HTMLInputElement;
-		setStore("basics", { ...store.basics, [name]: value });
-		console.log(store.basics);
-	});
+	const { store } = useResumeContext();
 
 	onMount(() => {
 		const $image = document.querySelector("#image");
@@ -37,7 +30,7 @@ export default function BasicsPreview() {
 						</h2>
 					</Show>
 				</div>
-				<figure class="w-36">
+				<figure class="w-24">
 					<image class="hidden rounded-md" id="imagePreview" />
 				</figure>
 			</div>

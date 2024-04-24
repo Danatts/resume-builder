@@ -1,10 +1,12 @@
-import Json from "@/components/preview/Json";
+import About from "@/components/preview/AboutPreview";
+import Hero from "@/components/preview/HeroPreview";
 import { ResumeProvider } from "@/contexts/ResumeContext";
 
 export default function Preview() {
 	return (
 		<ResumeProvider>
-			<Json />
+			<Hero />
+			<About />
 		</ResumeProvider>
 	);
 }
