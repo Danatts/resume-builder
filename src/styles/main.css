@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        color-scheme: light dark;
-    }
-
     label {
         @apply flex flex-col gap-1 font-medium;
     }

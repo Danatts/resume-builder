@@ -14,10 +14,10 @@ import PreviewPanel from "@/components/PreviewPanel";
 	</head>
 	<body>
 		<div class="md:grid md:grid-cols-2 h-screen">
-			<Panel>
+			<Panel printHidden=true>
 				<FormPanel client:load />
 			</Panel>
-			<Panel>
+			<Panel printNotOverflow=true>
 				<PreviewPanel client:load />
 			</Panel>
 		</div>

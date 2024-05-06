@@ -12,7 +12,10 @@ export default function WorkPreview() {
 				<For each={store.skills}>
 					{(s) => (
 						<li>
-							<Pill>{s.name}</Pill>
+							<Pill>{`${s.name}${
+								// biome-ignore lint/style/useTemplate: <explanation>
+								s.level ? " - " + s.level : ""
+							}`}</Pill>
 						</li>
 					)}
 				</For>

@@ -19,10 +19,6 @@ export default function WorkForm(props: FormProps) {
 
 	return (
 		<fieldset ref={field}>
-			<label for="name">
-				Company
-				<input id="name" name="name" type="text" placeholder={work[0].name} />
-			</label>
 			<label for="position">
 				Position
 				<input
@@ -31,6 +27,10 @@ export default function WorkForm(props: FormProps) {
 					type="text"
 					placeholder={work[0].position}
 				/>
+			</label>
+			<label for="name">
+				Company
+				<input id="name" name="name" type="text" placeholder={work[0].name} />
 			</label>
 			<label for="url">
 				Url
@@ -48,6 +48,7 @@ export default function WorkForm(props: FormProps) {
 				Summary
 				<textarea id="summary" name="summary" placeholder={work[0].summary} />
 			</label>
+      {/*
 			<label for="highlights">
 				Highlights
 				<input
@@ -57,6 +58,7 @@ export default function WorkForm(props: FormProps) {
 					placeholder={work[0].highlights[0]}
 				/>
 			</label>
+      */}
 		</fieldset>
 	);
 }

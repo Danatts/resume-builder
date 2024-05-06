@@ -19,15 +19,6 @@ export default function EducationForm(props: FormProps) {
 
 	return (
 		<fieldset ref={field}>
-			<label for="institution">
-				Institution
-				<input
-					id="institution"
-					name="institution"
-					type="text"
-					placeholder={education[0].institution}
-				/>
-			</label>
 			<label for="area">
 				Area
 				<input
@@ -37,18 +28,18 @@ export default function EducationForm(props: FormProps) {
 					placeholder={education[0].area}
 				/>
 			</label>
+			<label for="institution">
+				Institution
+				<input
+					id="institution"
+					name="institution"
+					type="text"
+					placeholder={education[0].institution}
+				/>
+			</label>
 			<label for="url">
 				Url
 				<input id="url" name="url" type="url" placeholder={education[0].url} />
-			</label>
-			<label for="studyType">
-				Type
-				<input
-					id="studyType"
-					name="studyType"
-					type="text"
-					placeholder={education[0].studyType}
-				/>
 			</label>
 			<label for="startDate">
 				Starting date
@@ -57,6 +48,16 @@ export default function EducationForm(props: FormProps) {
 			<label for="endDate">
 				Ending date
 				<input id="endDate" name="endDate" type="date" />
+			</label>
+      {/*
+			<label for="studyType">
+				Type
+				<input
+					id="studyType"
+					name="studyType"
+					type="text"
+					placeholder={education[0].studyType}
+				/>
 			</label>
 			<label for="score">
 				Score
@@ -76,6 +77,7 @@ export default function EducationForm(props: FormProps) {
 					placeholder={education[0].courses[0]}
 				/>
 			</label>
+      */}
 		</fieldset>
 	);
 }
