@@ -1,3 +1,4 @@
+import Contact from "@/components/preview/common/Contact";
 import Section from "@/components/preview/common/SectionStyle";
 import useResumeContext from "@/hooks/useResumeContext";
 import { Show, onMount } from "solid-js";
@@ -28,6 +29,18 @@ export default function BasicsPreview() {
 						<h2 class="font-medium text-base text-left text-neutral-500">
 							{store.basics?.label}
 						</h2>
+					</Show>
+					<Show when={store.basics?.email}>
+						<Contact text={store.basics?.email} network={"Mail"} />
+					</Show>
+					<Show when={store.basics?.phone}>
+						<Contact text={store.basics?.phone} network={"Phone"} />{" "}
+					</Show>
+					<Show when={store.basics?.location.city}>
+						<Contact
+							text={`${store.basics?.location?.city}, ${store.basics?.location?.region}`}
+							network={"Location"}
+						/>
 					</Show>
 				</div>
 				<figure class="w-24">

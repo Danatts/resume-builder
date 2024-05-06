@@ -48,7 +48,7 @@ export default function WorkForm(props: FormProps) {
 				Summary
 				<textarea id="summary" name="summary" placeholder={work[0].summary} />
 			</label>
-      {/*
+			{/*
 			<label for="highlights">
 				Highlights
 				<input

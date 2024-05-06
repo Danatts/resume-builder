@@ -1,8 +1,4 @@
-interface Props {
-	size: number;
-}
-
-export default function TrashIcon(props: Props) {
+export default function TrashIcon(props: { size: number }) {
 	return (
 		<svg
 			fill="none"

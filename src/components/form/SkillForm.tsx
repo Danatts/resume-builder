@@ -5,24 +5,24 @@ import { createSignal, onMount } from "solid-js";
 const { skills } = placeholder;
 
 export default function SkillForm(props: FormProps) {
-  let field: HTMLFieldSetElement;
-  const [data, setData] = createSignal<Skill>();
-  const { setStore } = useResumeContext();
+	let field: HTMLFieldSetElement;
+	const [data, setData] = createSignal<Skill>();
+	const { setStore } = useResumeContext();
 
-  onMount(() => {
-    field.addEventListener("input", (e) => {
-      const { name, value } = e.target as HTMLInputElement;
-      setData({ ...data(), [name]: value });
-      setStore("skills", props.key, data());
-    });
-  });
+	onMount(() => {
+		field.addEventListener("input", (e) => {
+			const { name, value } = e.target as HTMLInputElement;
+			setData({ ...data(), [name]: value });
+			setStore("skills", props.key, data());
+		});
+	});
 
-  return (
-    <fieldset ref={field}>
-      <label for="name">
-        Name
-        <input placeholder={skills[0].name} id="name" name="name" type="text" />
-      </label>
+	return (
+		<fieldset ref={field}>
+			<label for="name">
+				Name
+				<input placeholder={skills[0].name} id="name" name="name" type="text" />
+			</label>
 			<label for="level">
 				Level
 				<input
@@ -32,7 +32,7 @@ export default function SkillForm(props: FormProps) {
 					type="text"
 				/>
 			</label>
-      {/*
+			{/*
 			<label for="keywords">
 				Keywords
 				<input
@@ -43,6 +43,6 @@ export default function SkillForm(props: FormProps) {
 				/>
 			</label>
       */}
-    </fieldset>
-  );
+		</fieldset>
+	);
 }

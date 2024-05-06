@@ -35,7 +35,7 @@ export default function LocationForm() {
 					type="text"
 				/>
 			</label>
-      {/*
+			{/*
 			<label for="countryCode">
 				Country code
 				<input
@@ -46,7 +46,7 @@ export default function LocationForm() {
 				/>
 			</label>
       */}
-      {/*
+			{/*
 			<label for="address">
 				Address
 				<input
@@ -57,7 +57,7 @@ export default function LocationForm() {
 				/>
 			</label>
       */}
-      {/*
+			{/*
 			<label for="postalCode">
 				Postal Code
 				<input

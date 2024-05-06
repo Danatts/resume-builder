@@ -1,8 +1,4 @@
-interface Props {
-	size: number;
-}
-
-export default function CameraIcon(props: Props) {
+export default function CameraIcon(props: { size: number }) {
 	return (
 		<svg
 			fill="none"

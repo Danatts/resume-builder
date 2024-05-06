@@ -125,3 +125,6 @@ export type Project = {
 export type FormProps = {
 	key?: number;
 };
+
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+export type SocialIcon = Record<string, string | any>;

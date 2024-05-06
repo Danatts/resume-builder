@@ -49,7 +49,7 @@ export default function EducationForm(props: FormProps) {
 				Ending date
 				<input id="endDate" name="endDate" type="date" />
 			</label>
-      {/*
+			{/*
 			<label for="studyType">
 				Type
 				<input
