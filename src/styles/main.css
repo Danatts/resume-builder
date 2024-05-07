@@ -3,21 +3,22 @@
 @tailwind utilities;
 
 @layer base {
-    label {
-        @apply flex flex-col gap-1 font-medium;
-    }
+  label {
+    @apply flex flex-col gap-1 font-medium;
+  }
 
-    input,
-    textarea {
-        @apply border border-solid py-1 px-2 rounded-md font-normal;
-    }
+  input,
+  textarea,
+  form {
+    @apply border py-1 px-2 rounded-md font-normal;
+  }
 
-    legend {
-        @apply text-xl font-bold;
-    }
+  legend {
+    @apply text-xl font-bold;
+  }
 
-    form,
-    fieldset {
-        @apply flex flex-col gap-4 mb-4;
-    }
+  form,
+  fieldset {
+    @apply flex flex-col gap-4 mb-4;
+  }
 }
