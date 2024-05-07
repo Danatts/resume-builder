@@ -9,16 +9,16 @@ import { view } from "@/store/view";
 import "@/styles/print.css";
 
 export default function Preview() {
-  return (
-    <div class="at_print">
-      <ResumeProvider>
-        <Hero />
-        <About />
-        <Work show={view.work} />
-        <Education show={view.education} />
-        <Skill show={view.skill} />
-        <Language show={view.language} />
-      </ResumeProvider>
-    </div>
-  );
+	return (
+		<div class="at_print">
+			<ResumeProvider>
+				<Hero />
+				<About />
+				<Work show={view.work} />
+				<Education show={view.education} />
+				<Skill show={view.skills} />
+				<Language show={view.languages} />
+			</ResumeProvider>
+		</div>
+	);
 }
