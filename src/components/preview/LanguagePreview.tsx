@@ -3,19 +3,19 @@ import Section from "@/components/preview/common/SectionStyle";
 import useResumeContext from "@/hooks/useResumeContext";
 import { For, Show } from "solid-js";
 
-export default function WorkPreview(props: { show: boolean }) {
+export default function LanguagePreview(props: { show: boolean }) {
   const { store } = useResumeContext();
 
   return (
     <Show when={props.show}>
-      <Section title="Skills">
+      <Section title="Languages">
         <ul class="flex flex-wrap gap-2 justify-stretch">
-          <For each={store.skills}>
-            {(s) => (
+          <For each={store.languages}>
+            {(l) => (
               <li>
-                <Pill>{`${s.name}${
+                <Pill>{`${l.language}${
                   // biome-ignore lint/style/useTemplate: <explanation>
-                  s.level ? " - " + s.level : ""
+                  l.fluency ? " - " + l.fluency : ""
                   }`}</Pill>
               </li>
             )}

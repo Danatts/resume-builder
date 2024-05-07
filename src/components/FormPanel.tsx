@@ -1,6 +1,6 @@
-import BasicsForm from "@/components/form/BasicsForm";
+import Basics from "@/components/form/BasicsForm";
 import ListCards from "@/components/form/ListCards";
-import LocationForm from "@/components/form/LocationForm";
+import Location from "@/components/form/LocationForm";
 import { ResumeProvider } from "@/contexts/ResumeContext";
 import "@/styles/main.css";
 
@@ -8,8 +8,8 @@ export default function FormPanel() {
 	return (
 		<div>
 			<ResumeProvider>
-				<BasicsForm />
-				<LocationForm />
+				<Basics />
+				<Location />
 				<ListCards
 					componentName={"ProfileForm"}
 					legend={"Profiles"}
