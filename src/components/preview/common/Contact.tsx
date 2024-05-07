@@ -1,9 +1,11 @@
-import Github from "@/icons/GithubIcon.jsx";
-import Linkedin from "@/icons/LinkedinIcon.jsx";
-import Location from "@/icons/LocationIcon.jsx";
-import Mail from "@/icons/MailIcon.jsx";
-import Phone from "@/icons/PhoneIcon.jsx";
+import Github from "@/icons/GithubIcon";
+import Globe from "@/icons/GlobeIcon";
+import Linkedin from "@/icons/LinkedinIcon";
+import Location from "@/icons/LocationIcon";
+import Mail from "@/icons/MailIcon";
+import Phone from "@/icons/PhoneIcon";
 import type { SocialIcon } from "@/types.d.ts";
+import { type JSXElement, Show } from "solid-js";
 
 const SOCIAL_ICONS: SocialIcon = {
 	Github,
@@ -11,11 +13,12 @@ const SOCIAL_ICONS: SocialIcon = {
 	Mail,
 	Location,
 	Phone,
+	Globe,
 };
 
 export default function Contact(props: {
 	network: string;
-	text: string;
+	children: JSXElement;
 	url?: string;
 }) {
 	const Icon = SOCIAL_ICONS[props.network];
@@ -24,12 +27,11 @@ export default function Contact(props: {
 	return (
 		<span class="text-sm flex gap-1">
 			<Icon size={ICON_SIZE} />
-			{props.url && (
+			<Show when={props.url} fallback={props.children}>
 				<a href={props.url} target="_blank" rel="noreferrer">
-					{props.text}
+					{props.children}
 				</a>
-			)}
-			{!props.url && props.text}
+			</Show>
 		</span>
 	);
 }

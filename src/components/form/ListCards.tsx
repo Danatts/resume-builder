@@ -55,15 +55,7 @@ export default function ListCards(props: Props) {
 
 	function removeCard(id: number) {
 		setList(list().filter((_, i) => i !== id));
-		if (props.formID === "profiles") {
-			setStore(
-				"basics",
-				"profiles",
-				[...store.basics.profiles].toSpliced(id, 1),
-			);
-		} else {
-			setStore(props.formID, [...store[props.formID]].toSpliced(id, 1));
-		}
+		setStore(props.formID, [...store[props.formID]].toSpliced(id, 1));
 	}
 
 	function handleView() {

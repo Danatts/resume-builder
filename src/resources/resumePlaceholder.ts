@@ -14,14 +14,14 @@ export default {
 			countryCode: "US",
 			region: "California",
 		},
-		profiles: [
-			{
-				network: "Twitter",
-				username: "john",
-				url: "https://twitter.com/john",
-			},
-		],
 	},
+	profiles: [
+		{
+			network: "Twitter",
+			username: "john",
+			url: "https://twitter.com/john",
+		},
+	],
 	work: [
 		{
 			name: "Company",

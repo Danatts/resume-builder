@@ -1,5 +1,6 @@
 export type Resume = {
 	basics?: Basics;
+	profiles?: Profile[];
 	work?: Work[];
 	volunteer?: Volunteer[];
 	education?: Education[];
@@ -22,7 +23,6 @@ export type Basics = {
 	url?: string;
 	summary?: string;
 	location?: Location;
-	profiles?: Profile[];
 };
 
 export type Location = {

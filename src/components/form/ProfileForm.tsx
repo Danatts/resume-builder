@@ -2,8 +2,7 @@ import useResumeContext from "@/hooks/useResumeContext";
 import placeholder from "@/resources/resumePlaceholder";
 import type { FormProps, Profile } from "@/types";
 import { createSignal, onMount } from "solid-js";
-const { basics } = placeholder;
-const { profiles } = basics;
+const { profiles } = placeholder;
 
 export default function ProfileForm(props: FormProps) {
 	let field: HTMLFieldSetElement;
@@ -14,7 +13,7 @@ export default function ProfileForm(props: FormProps) {
 		field.addEventListener("input", (e) => {
 			const { name, value } = e.target as HTMLInputElement;
 			setData({ ...data(), [name]: value });
-			setStore("basics", "profiles", props.key, data());
+			setStore("profiles", props.key, data());
 		});
 	});
 
