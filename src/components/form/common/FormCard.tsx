@@ -7,7 +7,7 @@ interface Props {
 	key: number;
 }
 
-export default function Card(props: Props) {
+export default function FormCard(props: Props) {
 	return (
 		<div class="border p-3 flex flex-col rounded-md">
 			<button

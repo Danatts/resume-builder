@@ -22,10 +22,6 @@ export type Basics = {
 	phone?: string;
 	url?: string;
 	summary?: string;
-	location?: Location;
-};
-
-export type Location = {
 	address?: string;
 	postalCode?: string;
 	city?: string;

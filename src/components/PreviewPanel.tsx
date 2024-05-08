@@ -1,4 +1,3 @@
-import About from "@/components/preview/AboutPreview";
 import Education from "@/components/preview/EducationPreview";
 import Hero from "@/components/preview/HeroPreview";
 import Language from "@/components/preview/LanguagePreview";
@@ -12,8 +11,7 @@ export default function Preview() {
 	return (
 		<div class="at_print">
 			<ResumeProvider>
-				<Hero />
-				<About />
+				<Hero show={view.basics} />
 				<Work show={view.work} />
 				<Education show={view.education} />
 				<Skill show={view.skills} />

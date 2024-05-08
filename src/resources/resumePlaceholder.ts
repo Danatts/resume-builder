@@ -7,13 +7,11 @@ export default {
 		phone: "(912) 555-4321",
 		url: "https://johndoe.com",
 		summary: "A summary of John Doe…",
-		location: {
-			address: "2712 Broadway St",
-			postalCode: "CA 94115",
-			city: "San Francisco",
-			countryCode: "US",
-			region: "California",
-		},
+		address: "2712 Broadway St",
+		postalCode: "CA 94115",
+		city: "San Francisco",
+		countryCode: "US",
+		region: "California",
 	},
 	profiles: [
 		{

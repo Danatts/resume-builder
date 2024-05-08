@@ -1,7 +1,5 @@
 export default {
-	basics: {
-		location: {},
-	},
+	basics: {},
 	profiles: [],
 	work: [],
 	volunteer: [],
