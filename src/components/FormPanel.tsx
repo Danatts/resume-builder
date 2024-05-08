@@ -11,11 +11,6 @@ export default function FormPanel() {
 				<Basics />
 				<Location />
 				<ListCards
-					componentName={"ProfileForm"}
-					legend={"Profiles"}
-					formID={"profiles"}
-				/>
-				<ListCards
 					componentName={"WorkForm"}
 					legend={"Work Experience"}
 					formID={"work"}
