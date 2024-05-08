@@ -1,36 +1,39 @@
+import FormSection from "@/components/form/common/FormSection";
 import useResumeContext from "@/hooks/useResumeContext";
 import CameraIcon from "@/icons/CameraIcon";
 import placeholder from "@/resources/resumePlaceholder";
 import { setView, view } from "@/store/view";
 import type { Basics } from "@/types";
-import { createSignal, onMount } from "solid-js";
-import FormSection from "./common/FormSection";
-
-const { basics } = placeholder;
+import { createSignal } from "solid-js";
 
 export default function BasicsForm() {
-	let form: HTMLFormElement;
 	const [data, setData] = createSignal<Basics>();
 	const { setStore } = useResumeContext();
+	const { basics } = placeholder;
 
-	onMount(() => {
-		form.addEventListener("input", (e) => {
-			const { name, value } = e.target as HTMLInputElement;
-			setData({ ...data(), [name]: value });
-			setStore("basics", data());
-		});
-	});
+	function handleInput(e: Event) {
+		e.preventDefault();
+		const { name, value } = e.target as HTMLInputElement;
+		setData({ ...data(), [name]: value });
+		setStore("basics", data());
+	}
 
 	function handleView() {
 		setView("basics", !view.basics);
 	}
 
 	return (
-		<form ref={form} id="basics" name="basics">
-			<FormSection title={"Basics"} view={view.basics} setView={handleView}>
+		<FormSection title={"Basics"} view={view.basics} setView={handleView}>
+			<form id="basics" name="basics" onInput={handleInput}>
 				<label for="name">
 					Name
-					<input placeholder={basics.name} id="name" name="name" type="text" />
+					<input
+						placeholder={basics.name}
+						id="name"
+						name="name"
+						type="text"
+						value={data()?.name ? data().name : null}
+					/>
 				</label>
 				<label for="label">
 					Label
@@ -39,6 +42,7 @@ export default function BasicsForm() {
 						id="label"
 						name="label"
 						type="text"
+						value={data()?.label ? data().label : null}
 					/>
 				</label>
 				<label for="email">
@@ -48,6 +52,7 @@ export default function BasicsForm() {
 						id="email"
 						name="email"
 						type="email"
+						value={data()?.email ? data().email : null}
 					/>
 				</label>
 				<label for="phone">
@@ -57,15 +62,28 @@ export default function BasicsForm() {
 						id="phone"
 						name="phone"
 						type="tel"
+						value={data()?.phone ? data().phone : null}
 					/>
 				</label>
 				<label for="url">
 					Website
-					<input placeholder={basics.url} id="url" name="url" type="url" />
+					<input
+						placeholder={basics.url}
+						id="url"
+						name="url"
+						type="url"
+						value={data()?.url ? data().url : null}
+					/>
 				</label>
 				<label for="city">
 					City
-					<input placeholder={basics.city} id="city" name="city" type="text" />
+					<input
+						placeholder={basics.city}
+						id="city"
+						name="city"
+						type="text"
+						value={data()?.city ? data().city : null}
+					/>
 				</label>
 				<label for="region">
 					Country
@@ -74,11 +92,17 @@ export default function BasicsForm() {
 						id="region"
 						name="region"
 						type="text"
+						value={data()?.region ? data().region : null}
 					/>
 				</label>
 				<label for="summary">
 					Summary
-					<textarea placeholder={basics.summary} id="summary" name="summary" />
+					<textarea
+						placeholder={basics.summary}
+						id="summary"
+						name="summary"
+						value={data()?.summary ? data().summary : null}
+					/>
 				</label>
 				<label
 					class=" active:scale-95 rounded-md flex flex-col items-center cursor-pointer p-2 self-center border w-full"
@@ -94,7 +118,7 @@ export default function BasicsForm() {
 					<CameraIcon size={40} />
 					Uplaod profile picture
 				</label>
-			</FormSection>
-		</form>
+			</form>
+		</FormSection>
 	);
 }

@@ -15,7 +15,7 @@ import PreviewPanel from "@/components/PreviewPanel";
 	<body>
 		<div class="md:grid md:grid-cols-2 h-screen">
 			<Panel printHidden=true>
-				<FormPanel client:load />
+				<FormPanel client:only="solid-js" />
 			</Panel>
 			<Panel printNotOverflow=true>
 				<PreviewPanel client:load />
