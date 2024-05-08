@@ -8,13 +8,8 @@
   }
 
   input,
-  textarea,
-  form {
+  textarea {
     @apply border py-1 px-2 rounded-md font-normal;
-  }
-
-  legend {
-    @apply text-xl font-bold;
   }
 
   form,

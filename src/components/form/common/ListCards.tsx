@@ -66,14 +66,14 @@ export default function ListCards(props: Props) {
   return (
     <Show when={Form}>
       <form id={props.formID} name={props.formID}>
-        <div class="flex justify-between">
+        <header class="flex justify-between">
           <legend>{props.legend}</legend>
           <button type="button" onClick={handleView}>
             <Show when={view[props.formID]} fallback={<HideIcon size={25} />}>
               <ShowIcon size={25} />
             </Show>
           </button>
-        </div>
+        </header>
         <For each={list()}>
           {(_, index) => (
             <Card key={index()} delete={removeCard}>
