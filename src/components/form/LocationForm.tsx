@@ -23,7 +23,6 @@ export default function LocationForm() {
   return (
     <FormSection title={"Location"}>
       <form ref={form} id="location" name="location">
-        <legend>Location</legend>
         <label for="city">
           City
           <input placeholder={location.city} id="city" name="city" type="text" />

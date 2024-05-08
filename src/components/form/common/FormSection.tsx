@@ -1,9 +1,17 @@
 import CollapsedIcon from "@/icons/CollapsedIcon";
 import ExpandedIcon from "@/icons/ExpandedIcon";
 import ShowIcon from "@/icons/ShowIcon";
+import HideIcon from "@/icons/HideIcon";
 import { Show, createSignal, type JSXElement } from "solid-js";
 
-export default function FormSection(props: { title: string; children: JSXElement }) {
+interface Props {
+  children: JSXElement;
+  title: string;
+  view?: boolean;
+  setView?: () => void;
+}
+
+export default function FormSection(props: Props) {
   const [toggle, setToggle] = createSignal<boolean>(false);
 
   function handleToogle() {
@@ -21,7 +29,11 @@ export default function FormSection(props: { title: string; children: JSXElement
             <h1 class="text-xl font-bold">{props.title}</h1>
           </button>
         </div>
-        <ShowIcon size={25} />
+        <button type="button" onClick={props.setView}>
+          <Show when={props.view} fallback={<HideIcon size={25} />}>
+            <ShowIcon size={25} />
+          </Show>
+        </button>
       </header>
       <Show when={toggle()}>
         {props.children}

@@ -19,6 +19,7 @@ import type { Resume } from "@/types";
 import type { JSXElement } from "solid-js";
 import { For, Show, createSignal } from "solid-js";
 import type { Part } from "solid-js/store";
+import FormSection from "./FormSection";
 
 interface Props {
   componentName: string;
@@ -64,16 +65,8 @@ export default function ListCards(props: Props) {
   }
 
   return (
-    <Show when={Form}>
+    <FormSection title={props.legend} view={view[props.formID]} setView={handleView}>
       <form id={props.formID} name={props.formID}>
-        <header class="flex justify-between">
-          <legend>{props.legend}</legend>
-          <button type="button" onClick={handleView}>
-            <Show when={view[props.formID]} fallback={<HideIcon size={25} />}>
-              <ShowIcon size={25} />
-            </Show>
-          </button>
-        </header>
         <For each={list()}>
           {(_, index) => (
             <Card key={index()} delete={removeCard}>
@@ -85,6 +78,6 @@ export default function ListCards(props: Props) {
           Add
         </button>
       </form>
-    </Show>
+    </FormSection>
   );
 }
