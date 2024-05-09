@@ -1,33 +1,31 @@
 import Card from "@/components/preview/common/Card";
 import Section from "@/components/preview/common/SectionStyle";
 import Text from "@/components/preview/common/TextStyle";
-import useResumeContext from "@/hooks/useResumeContext";
 import { For, Show } from "solid-js";
+import { resume } from "@/store/resumeStore";
 
 export default function WorkPreview(props: { show: boolean }) {
-	const { store } = useResumeContext();
-
-	return (
-		<Show when={props.show}>
-			<Section title="Experience">
-				<ul class="flex flex-col gap-4">
-					<For each={store.work}>
-						{(w) => (
-							<li>
-								<Card
-									title={w.position}
-									subtitle={w.name}
-									subUrl={w.url}
-									start={w.startDate}
-									end={w.endDate}
-								>
-									<Text>{w.summary}</Text>
-								</Card>
-							</li>
-						)}
-					</For>
-				</ul>
-			</Section>
-		</Show>
-	);
+  return (
+    <Show when={props.show}>
+      <Section title="Experience">
+        <ul class="flex flex-col gap-4">
+          <For each={resume.work}>
+            {(w) => (
+              <li>
+                <Card
+                  title={w.position}
+                  subtitle={w.name}
+                  subUrl={w.url}
+                  start={w.startDate}
+                  end={w.endDate}
+                >
+                  <Text>{w.summary}</Text>
+                </Card>
+              </li>
+            )}
+          </For>
+        </ul>
+      </Section>
+    </Show>
+  );
 }
