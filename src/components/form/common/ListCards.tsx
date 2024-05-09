@@ -47,11 +47,7 @@ export default function ListCards(props: Props) {
 	}
 
 	return (
-		<FormSection
-			title={props.legend}
-			view={view[props.formID]}
-			setView={handleView}
-		>
+		<FormSection title={props.legend} section={props.formID}>
 			<form id={props.formID} name={props.formID}>
 				<For each={list()}>
 					{(_, index) => (

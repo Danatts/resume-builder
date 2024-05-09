@@ -2,7 +2,6 @@ import FormSection from "@/components/form/common/FormSection";
 import useResumeContext from "@/hooks/useResumeContext";
 import CameraIcon from "@/icons/CameraIcon";
 import ph from "@/resources/resumePlaceholder";
-import { setView, view } from "@/store/view";
 import type { Basics } from "@/types";
 import { createSignal } from "solid-js";
 
@@ -17,12 +16,8 @@ export default function BasicsForm() {
 		setStore("basics", data());
 	}
 
-	function handleView() {
-		setView("basics", !view.basics);
-	}
-
 	return (
-		<FormSection title={"Basics"} view={view.basics} setView={handleView}>
+		<FormSection title={"Basics"} section={"basics"}>
 			<form id="basics" name="basics" onInput={handleInput}>
 				<label for="name">
 					Name

@@ -2,13 +2,13 @@ import CollapsedIcon from "@/icons/CollapsedIcon";
 import ExpandedIcon from "@/icons/ExpandedIcon";
 import HideIcon from "@/icons/HideIcon";
 import ShowIcon from "@/icons/ShowIcon";
+import { setView, view } from "@/store/view";
 import { type JSXElement, Show, createSignal } from "solid-js";
 
 interface Props {
 	children: JSXElement;
 	title: string;
-	view?: boolean;
-	setView?: () => void;
+	section: string;
 }
 
 export default function FormSection(props: Props) {
@@ -16,6 +16,10 @@ export default function FormSection(props: Props) {
 
 	function handleToogle() {
 		setToggle(!toggle());
+	}
+
+	function handleView() {
+		setView(props.section, !view[props.section]);
 	}
 
 	return (
@@ -33,8 +37,8 @@ export default function FormSection(props: Props) {
 						<h1 class="text-xl font-bold">{props.title}</h1>
 					</button>
 				</div>
-				<button type="button" onClick={props.setView}>
-					<Show when={props.view} fallback={<HideIcon size={25} />}>
+				<button type="button" onClick={handleView}>
+					<Show when={view[props.section]} fallback={<HideIcon size={25} />}>
 						<ShowIcon size={25} />
 					</Show>
 				</button>

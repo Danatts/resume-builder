@@ -2,10 +2,10 @@ import { createStore } from "solid-js/store";
 
 const [view, setView] = createStore({
 	basics: true,
-	work: true,
-	education: true,
-	skills: true,
-	languages: true,
+	work: false,
+	education: false,
+	skills: false,
+	languages: false,
 });
 
 export { view, setView };
