@@ -16,10 +16,10 @@ export default function WorkForm(props: FormProps) {
 
 	return (
 		<fieldset onInput={handleInput}>
-			<label for="position">
+			<label for={`position${props.key}`}>
 				Position
 				<input
-					id="position"
+					id={`position${props.key}`}
 					name="position"
 					type="text"
 					placeholder={ph.work[0].position}
@@ -30,10 +30,11 @@ export default function WorkForm(props: FormProps) {
 					}
 				/>
 			</label>
-			<label for="name">
+			<label for={`name${props.key}`}>
 				Company
 				<input
-					id="name"
+					autocomplete="name"
+					id={`name${props.key}`}
 					name="name"
 					type="text"
 					placeholder={ph.work[0].name}
@@ -42,20 +43,20 @@ export default function WorkForm(props: FormProps) {
 					}
 				/>
 			</label>
-			<label for="url">
+			<label for={`url${props.key}`}>
 				Url
 				<input
-					id="url"
+					id={`url${props.key}`}
 					name="url"
 					type="url"
 					placeholder={ph.work[0].url}
 					value={store?.work[props.key]?.url ? store.work[props.key].url : null}
 				/>
 			</label>
-			<label for="startDate">
+			<label for={`startDate${props.key}`}>
 				Starting date
 				<input
-					id="startDate"
+					id={`startDate${props.key}`}
 					name="startDate"
 					type="date"
 					value={
@@ -65,10 +66,10 @@ export default function WorkForm(props: FormProps) {
 					}
 				/>
 			</label>
-			<label for="endDate">
+			<label for={`endDate${props.key}`}>
 				Ending date
 				<input
-					id="endDate"
+					id={`endDate${props.key}`}
 					name="endDate"
 					type="date"
 					value={
@@ -78,10 +79,10 @@ export default function WorkForm(props: FormProps) {
 					}
 				/>
 			</label>
-			<label for="summary">
+			<label for={`summary${props.key}`}>
 				Summary
 				<textarea
-					id="summary"
+					id={`summary${props.key}`}
 					name="summary"
 					placeholder={ph.work[0].summary}
 					value={

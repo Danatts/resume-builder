@@ -19,7 +19,7 @@ export default function FormSection(props: Props) {
 	}
 
 	return (
-		<section class="border p-2 rounded-md">
+		<section class="border p-2 rounded">
 			<header class="flex justify-between p-2 items-center">
 				<div>
 					<button

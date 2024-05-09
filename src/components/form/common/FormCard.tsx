@@ -9,7 +9,7 @@ interface Props {
 
 export default function FormCard(props: Props) {
 	return (
-		<div class="border p-3 flex flex-col rounded-md">
+		<div class="border p-3 flex flex-col rounded">
 			<button
 				class="w-fit self-end"
 				type="button"

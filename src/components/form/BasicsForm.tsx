@@ -27,6 +27,7 @@ export default function BasicsForm() {
 				<label for="name">
 					Name
 					<input
+						autocomplete="name"
 						placeholder={ph.basics.name}
 						id="name"
 						name="name"
@@ -47,6 +48,7 @@ export default function BasicsForm() {
 				<label for="email">
 					Email
 					<input
+						autocomplete="email"
 						placeholder={ph.basics.email}
 						id="email"
 						name="email"
@@ -57,6 +59,7 @@ export default function BasicsForm() {
 				<label for="phone">
 					Phone
 					<input
+						autocomplete="tel"
 						placeholder={ph.basics.phone}
 						id="phone"
 						name="phone"
@@ -67,6 +70,7 @@ export default function BasicsForm() {
 				<label for="url">
 					Website
 					<input
+						autocomplete="url"
 						placeholder={ph.basics.url}
 						id="url"
 						name="url"
@@ -87,6 +91,7 @@ export default function BasicsForm() {
 				<label for="region">
 					Country
 					<input
+						autocomplete="county"
 						placeholder={ph.basics.region}
 						id="region"
 						name="region"
@@ -104,7 +109,7 @@ export default function BasicsForm() {
 					/>
 				</label>
 				<label
-					class=" active:scale-95 rounded-md flex flex-col items-center cursor-pointer p-2 self-center border w-full"
+					class=" active:scale-95 rounded flex flex-col items-center cursor-pointer p-2 self-center border w-full"
 					for="image"
 				>
 					<input

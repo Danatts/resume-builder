@@ -1,14 +1,5 @@
-import AwardForm from "@/components/form/AwardForm";
-import CertificateForm from "@/components/form/CertificateForm";
 import EducationForm from "@/components/form/EducationForm";
-import InterestForm from "@/components/form/InterestForm";
-import LanguageForm from "@/components/form/LanguageForm";
-import ProfileForm from "@/components/form/ProfileForm";
-import ProjectForm from "@/components/form/ProjectForm";
-import PublicationForm from "@/components/form/PublicationForm";
-import ReferenceForm from "@/components/form/ReferenceForm";
 import SkillForm from "@/components/form/SkillForm";
-import VolunteerForm from "@/components/form/VolunteerForm";
 import WorkForm from "@/components/form/WorkForm";
 import Card from "@/components/form/common/FormCard";
 import useResumeContext from "@/hooks/useResumeContext";
@@ -27,18 +18,9 @@ interface Props {
 }
 
 const FORM = {
-	AwardForm,
-	CertificateForm,
 	EducationForm,
-	InterestForm,
-	LanguageForm,
-	ProfileForm,
-	ProjectForm,
-	PublicationForm,
-	ReferenceForm,
 	SkillForm,
 	WorkForm,
-	VolunteerForm,
 };
 
 export default function ListCards(props: Props) {

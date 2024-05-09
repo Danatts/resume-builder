@@ -11,7 +11,7 @@ export default {
 		postalCode: "CA 94115",
 		city: "San Francisco",
 		countryCode: "US",
-		region: "California",
+		region: "United States",
 	},
 	profiles: [
 		{
