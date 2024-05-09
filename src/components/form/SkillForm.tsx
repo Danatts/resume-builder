@@ -1,35 +1,45 @@
 import useResumeContext from "@/hooks/useResumeContext";
-import placeholder from "@/resources/resumePlaceholder";
+import ph from "@/resources/resumePlaceholder";
 import type { FormProps, Skill } from "@/types";
-import { createSignal, onMount } from "solid-js";
-const { skills } = placeholder;
+import { createSignal } from "solid-js";
 
 export default function SkillForm(props: FormProps) {
-	let field: HTMLFieldSetElement;
 	const [data, setData] = createSignal<Skill>();
-	const { setStore } = useResumeContext();
+	const { store, setStore } = useResumeContext();
 
-	onMount(() => {
-		field.addEventListener("input", (e) => {
-			const { name, value } = e.target as HTMLInputElement;
-			setData({ ...data(), [name]: value });
-			setStore("skills", props.key, data());
-		});
-	});
+	function handleInput(e: Event) {
+		e.preventDefault();
+		const { name, value } = e.target as HTMLInputElement;
+		setData({ ...data(), [name]: value });
+		setStore("skills", props.key, data());
+	}
 
 	return (
-		<fieldset ref={field}>
+		<fieldset onInput={handleInput}>
 			<label for="name">
 				Name
-				<input placeholder={skills[0].name} id="name" name="name" type="text" />
+				<input
+					placeholder={ph.skills[0].name}
+					id="name"
+					name="name"
+					type="text"
+					value={
+						store?.skills[props.key]?.name ? store.skills[props.key].name : null
+					}
+				/>
 			</label>
 			<label for="level">
 				Level
 				<input
-					placeholder={skills[0].level}
+					placeholder={ph.skills[0].level}
 					id="level"
 					name="level"
 					type="text"
+					value={
+						store?.skills[props.key]?.level
+							? store.skills[props.key].level
+							: null
+					}
 				/>
 			</label>
 			{/*

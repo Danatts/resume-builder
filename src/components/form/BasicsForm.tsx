@@ -1,15 +1,14 @@
 import FormSection from "@/components/form/common/FormSection";
 import useResumeContext from "@/hooks/useResumeContext";
 import CameraIcon from "@/icons/CameraIcon";
-import placeholder from "@/resources/resumePlaceholder";
+import ph from "@/resources/resumePlaceholder";
 import { setView, view } from "@/store/view";
 import type { Basics } from "@/types";
 import { createSignal } from "solid-js";
 
 export default function BasicsForm() {
 	const [data, setData] = createSignal<Basics>();
-	const { setStore } = useResumeContext();
-	const { basics } = placeholder;
+	const { store, setStore } = useResumeContext();
 
 	function handleInput(e: Event) {
 		e.preventDefault();
@@ -28,80 +27,80 @@ export default function BasicsForm() {
 				<label for="name">
 					Name
 					<input
-						placeholder={basics.name}
+						placeholder={ph.basics.name}
 						id="name"
 						name="name"
 						type="text"
-						value={data()?.name ? data().name : null}
+						value={store?.basics?.name ? store.basics.name : null}
 					/>
 				</label>
 				<label for="label">
 					Label
 					<input
-						placeholder={basics.label}
+						placeholder={ph.basics.label}
 						id="label"
 						name="label"
 						type="text"
-						value={data()?.label ? data().label : null}
+						value={store?.basics?.label ? store.basics.label : null}
 					/>
 				</label>
 				<label for="email">
 					Email
 					<input
-						placeholder={basics.email}
+						placeholder={ph.basics.email}
 						id="email"
 						name="email"
 						type="email"
-						value={data()?.email ? data().email : null}
+						value={store?.basics?.email ? store.basics.email : null}
 					/>
 				</label>
 				<label for="phone">
 					Phone
 					<input
-						placeholder={basics.phone}
+						placeholder={ph.basics.phone}
 						id="phone"
 						name="phone"
 						type="tel"
-						value={data()?.phone ? data().phone : null}
+						value={store?.basics?.phone ? store.basics.phone : null}
 					/>
 				</label>
 				<label for="url">
 					Website
 					<input
-						placeholder={basics.url}
+						placeholder={ph.basics.url}
 						id="url"
 						name="url"
 						type="url"
-						value={data()?.url ? data().url : null}
+						value={store?.basics?.url ? store.basics.url : null}
 					/>
 				</label>
 				<label for="city">
 					City
 					<input
-						placeholder={basics.city}
+						placeholder={ph.basics.city}
 						id="city"
 						name="city"
 						type="text"
-						value={data()?.city ? data().city : null}
+						value={store?.basics?.city ? store.basics.city : null}
 					/>
 				</label>
 				<label for="region">
 					Country
 					<input
-						placeholder={basics.region}
+						placeholder={ph.basics.region}
 						id="region"
 						name="region"
 						type="text"
-						value={data()?.region ? data().region : null}
+						value={store?.basics?.region ? store.basics.region : null}
 					/>
 				</label>
 				<label for="summary">
 					Summary
 					<textarea
-						placeholder={basics.summary}
+						placeholder={ph.basics.summary}
 						id="summary"
 						name="summary"
-						value={data()?.summary ? data().summary : null}
+						value={store?.basics?.summary ? store.basics.summary : null}
 					/>
 				</label>
 				<label
