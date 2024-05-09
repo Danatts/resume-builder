@@ -42,10 +42,6 @@ export default function ListCards(props: Props) {
 		setStore(props.formID, [...store[props.formID]].toSpliced(id, 1));
 	}
 
-	function handleView() {
-		setView(props.formID, !view[props.formID]);
-	}
-
 	return (
 		<FormSection title={props.legend} section={props.formID}>
 			<form id={props.formID} name={props.formID}>
