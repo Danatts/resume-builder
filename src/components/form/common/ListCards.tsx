@@ -1,7 +1,8 @@
 import EducationForm from "@/components/form/EducationForm";
+import LanguageForm from "@/components/form/LanguageForm";
 import SkillForm from "@/components/form/SkillForm";
 import WorkForm from "@/components/form/WorkForm";
-import Card from "@/components/form/common/FormCard";
+import FormCard from "@/components/form/common/FormCard";
 import useResumeContext from "@/hooks/useResumeContext";
 import { setView, view } from "@/store/view";
 import type { Resume } from "@/types";
@@ -19,6 +20,7 @@ interface Props {
 
 const FORM = {
 	EducationForm,
+	LanguageForm,
 	SkillForm,
 	WorkForm,
 };
@@ -53,9 +55,9 @@ export default function ListCards(props: Props) {
 			<form id={props.formID} name={props.formID}>
 				<For each={list()}>
 					{(_, index) => (
-						<Card key={index()} delete={removeCard}>
+						<FormCard key={index()} delete={removeCard}>
 							<Form key={index()} />
-						</Card>
+						</FormCard>
 					)}
 				</For>
 				<button class="border p-1 rounded-md" type="button" onClick={addCard}>

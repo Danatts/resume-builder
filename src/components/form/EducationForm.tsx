@@ -16,10 +16,11 @@ export default function EducationForm(props: FormProps) {
 
 	return (
 		<fieldset onInput={handleInput}>
-			<label for="area">
+			<label for={`area${props.key}`}>
 				Area
 				<input
-					id="area"
+					autocomplete="name"
+					id={`area${props.key}`}
 					name="area"
 					type="text"
 					placeholder={ph.education[0].area}
@@ -30,10 +31,10 @@ export default function EducationForm(props: FormProps) {
 					}
 				/>
 			</label>
-			<label for="institution">
+			<label for={`institution${props.key}`}>
 				Institution
 				<input
-					id="institution"
+					id={`institution${props.key}`}
 					name="institution"
 					type="text"
 					placeholder={ph.education[0].institution}
@@ -44,10 +45,10 @@ export default function EducationForm(props: FormProps) {
 					}
 				/>
 			</label>
-			<label for="url">
+			<label for={`url${props.key}`}>
 				Url
 				<input
-					id="url"
+					id={`url${props.key}`}
 					name="url"
 					type="url"
 					placeholder={ph.education[0].url}
@@ -58,10 +59,10 @@ export default function EducationForm(props: FormProps) {
 					}
 				/>
 			</label>
-			<label for="startDate">
+			<label for={`startDate${props.key}`}>
 				Starting date
 				<input
-					id="startDate"
+					id={`startDate${props.key}`}
 					name="startDate"
 					type="date"
 					value={
@@ -71,10 +72,10 @@ export default function EducationForm(props: FormProps) {
 					}
 				/>
 			</label>
-			<label for="endDate">
+			<label for={`endDate${props.key}`}>
 				Ending date
 				<input
-					id="endDate"
+					id={`endDate${props.key}`}
 					name="endDate"
 					type="date"
 					value={

@@ -1,7 +1,7 @@
 ---
 import FormPanel from "@/components/FormPanel";
-import Panel from "@/components/Panel.astro";
 import PreviewPanel from "@/components/PreviewPanel";
+import Panel from "@/components/common/Panel.astro";
 ---
 
 <html lang="en">
@@ -17,7 +17,7 @@ import PreviewPanel from "@/components/PreviewPanel";
 			<Panel printHidden=true>
 				<FormPanel client:only="solid-js" />
 			</Panel>
-			<Panel printNotOverflow=true>
+			<Panel printOverflow=true>
 				<PreviewPanel client:load />
 			</Panel>
 		</div>

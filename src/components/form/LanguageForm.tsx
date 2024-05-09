@@ -16,11 +16,11 @@ export default function LanguageForm(props: FormProps) {
 
 	return (
 		<fieldset onInput={handleInput}>
-			<label for="language">
+			<label for={`language${props.key}`}>
 				Language
 				<input
 					placeholder={ph.languages[0].language}
-					id="language"
+					id={`language${props.key}`}
 					name="language"
 					type="text"
 					value={
@@ -30,11 +30,11 @@ export default function LanguageForm(props: FormProps) {
 					}
 				/>
 			</label>
-			<label for="fluency">
+			<label for={`fluency${props.key}`}>
 				Fluency
 				<input
 					placeholder={ph.languages[0].fluency}
-					id="fluency"
+					id={`fluency${props.key}`}
 					name="fluency"
 					type="text"
 					value={

@@ -1,0 +1,7 @@
+---
+const { printHidden, printOverflow } = Astro.props;
+---
+<section class:list={["m-1", "p-4",
+"overflow-scroll", {"print:overflow-auto": printOverflow}, {"print:hidden": printHidden}]}>
+    <slot />
+</section>

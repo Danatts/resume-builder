@@ -16,11 +16,12 @@ export default function SkillForm(props: FormProps) {
 
 	return (
 		<fieldset onInput={handleInput}>
-			<label for="name">
+			<label for={`name${props.key}`}>
 				Name
 				<input
+					autocomplete="name"
 					placeholder={ph.skills[0].name}
-					id="name"
+					id={`name${props.key}`}
 					name="name"
 					type="text"
 					value={
@@ -28,11 +29,11 @@ export default function SkillForm(props: FormProps) {
 					}
 				/>
 			</label>
-			<label for="level">
+			<label for={`level${props.key}`}>
 				Level
 				<input
 					placeholder={ph.skills[0].level}
-					id="level"
+					id={`level${props.key}`}
 					name="level"
 					type="text"
 					value={
