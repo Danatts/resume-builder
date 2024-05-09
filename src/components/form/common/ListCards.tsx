@@ -3,59 +3,56 @@ import LanguageForm from "@/components/form/LanguageForm";
 import SkillForm from "@/components/form/SkillForm";
 import WorkForm from "@/components/form/WorkForm";
 import FormCard from "@/components/form/common/FormCard";
-import useResumeContext from "@/hooks/useResumeContext";
-import { setView, view } from "@/store/view";
 import type { Resume } from "@/types";
 import type { JSXElement } from "solid-js";
 import { For, createSignal } from "solid-js";
 import type { Part } from "solid-js/store";
 import FormSection from "./FormSection";
+import { resume, setResume } from "@/store/resumeStore";
 
 interface Props {
-	componentName: string;
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-	formID: string | Part<Resume, any>;
-	legend: string;
+  componentName: string;
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  formID: string | Part<Resume, any>;
+  legend: string;
 }
 
 const FORM = {
-	EducationForm,
-	LanguageForm,
-	SkillForm,
-	WorkForm,
+  EducationForm,
+  LanguageForm,
+  SkillForm,
+  WorkForm,
 };
 
 export default function ListCards(props: Props) {
-	const Form: (props: { key: number }) => JSXElement | null =
-		FORM[props.componentName];
+  const Form: (props: { key: number }) => JSXElement | null =
+    FORM[props.componentName];
 
-	const [list, setList] = createSignal([]);
+  const [list, setList] = createSignal([]);
 
-	const { store, setStore } = useResumeContext();
+  function addCard() {
+    setList([...list(), {}]);
+  }
 
-	function addCard() {
-		setList([...list(), {}]);
-	}
+  function removeCard(id: number) {
+    setList(list().filter((_, i) => i !== id));
+    setResume(props.formID, [...resume[props.formID]].toSpliced(id, 1));
+  }
 
-	function removeCard(id: number) {
-		setList(list().filter((_, i) => i !== id));
-		setStore(props.formID, [...store[props.formID]].toSpliced(id, 1));
-	}
-
-	return (
-		<FormSection title={props.legend} section={props.formID}>
-			<form id={props.formID} name={props.formID}>
-				<For each={list()}>
-					{(_, index) => (
-						<FormCard key={index()} delete={removeCard}>
-							<Form key={index()} />
-						</FormCard>
-					)}
-				</For>
-				<button class="border p-1 rounded-md" type="button" onClick={addCard}>
-					Add
-				</button>
-			</form>
-		</FormSection>
-	);
+  return (
+    <FormSection title={props.legend} section={props.formID}>
+      <form id={props.formID} name={props.formID}>
+        <For each={list()}>
+          {(_, index) => (
+            <FormCard key={index()} delete={removeCard}>
+              <Form key={index()} />
+            </FormCard>
+          )}
+        </For>
+        <button class="border p-1 rounded-md" type="button" onClick={addCard}>
+          Add
+        </button>
+      </form>
+    </FormSection>
+  );
 }

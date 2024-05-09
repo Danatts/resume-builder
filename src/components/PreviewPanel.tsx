@@ -4,7 +4,7 @@ import Language from "@/components/preview/LanguagePreview";
 import Skill from "@/components/preview/SkillPreview";
 import Work from "@/components/preview/WorkPreview";
 import { ResumeProvider } from "@/contexts/ResumeContext";
-import { view } from "@/store/view";
+import { view } from "@/store/viewStore";
 import "@/styles/print.css";
 
 export default function Preview() {

@@ -2,7 +2,7 @@ import CollapsedIcon from "@/icons/CollapsedIcon";
 import ExpandedIcon from "@/icons/ExpandedIcon";
 import HideIcon from "@/icons/HideIcon";
 import ShowIcon from "@/icons/ShowIcon";
-import { setView, view } from "@/store/view";
+import { setView, view } from "@/store/viewStore";
 import { type JSXElement, Show, createSignal } from "solid-js";
 
 interface Props {

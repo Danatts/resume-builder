@@ -1,49 +1,48 @@
-import useResumeContext from "@/hooks/useResumeContext";
 import ph from "@/resources/resumePlaceholder";
 import type { FormProps, Skill } from "@/types";
 import { createSignal } from "solid-js";
+import { resume, setResume } from "@/store/resumeStore";
 
 export default function SkillForm(props: FormProps) {
-	const [data, setData] = createSignal<Skill>();
-	const { store, setStore } = useResumeContext();
+  const [data, setData] = createSignal<Skill>();
 
-	function handleInput(e: Event) {
-		e.preventDefault();
-		const { name, value } = e.target as HTMLInputElement;
-		setData({ ...data(), [name]: value });
-		setStore("skills", props.key, data());
-	}
+  function handleInput(e: Event) {
+    e.preventDefault();
+    const { name, value } = e.target as HTMLInputElement;
+    setData({ ...data(), [name]: value });
+    setResume("skills", props.key, data());
+  }
 
-	return (
-		<fieldset onInput={handleInput}>
-			<label for={`name${props.key}`}>
-				Name
-				<input
-					autocomplete="name"
-					placeholder={ph.skills[0].name}
-					id={`name${props.key}`}
-					name="name"
-					type="text"
-					value={
-						store?.skills[props.key]?.name ? store.skills[props.key].name : null
-					}
-				/>
-			</label>
-			<label for={`level${props.key}`}>
-				Level
-				<input
-					placeholder={ph.skills[0].level}
-					id={`level${props.key}`}
-					name="level"
-					type="text"
-					value={
-						store?.skills[props.key]?.level
-							? store.skills[props.key].level
-							: null
-					}
-				/>
-			</label>
-			{/*
+  return (
+    <fieldset onInput={handleInput}>
+      <label for={`name${props.key}`}>
+        Name
+        <input
+          autocomplete="name"
+          placeholder={ph.skills[0].name}
+          id={`name${props.key}`}
+          name="name"
+          type="text"
+          value={
+            resume?.skills[props.key]?.name ? resume.skills[props.key].name : null
+          }
+        />
+      </label>
+      <label for={`level${props.key}`}>
+        Level
+        <input
+          placeholder={ph.skills[0].level}
+          id={`level${props.key}`}
+          name="level"
+          type="text"
+          value={
+            resume?.skills[props.key]?.level
+              ? resume.skills[props.key].level
+              : null
+          }
+        />
+      </label>
+      {/*
 			<label for="keywords">
 				Keywords
 				<input
@@ -54,6 +53,6 @@ export default function SkillForm(props: FormProps) {
 				/>
 			</label>
       */}
-		</fieldset>
-	);
+    </fieldset>
+  );
 }
