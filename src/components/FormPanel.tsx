@@ -1,4 +1,4 @@
-import Basics from "@/components/form/BasicsForm";
+import Basic from "@/components/form/BasicForm";
 import List from "@/components/form/common/ListCards";
 import { resume, setResume } from "@/store/resumeStore";
 import "@/styles/main.css";
@@ -17,7 +17,7 @@ export default function FormPanel() {
 
 	return (
 		<div class="flex flex-col gap-2" onInput={handleInput}>
-			<Basics />
+			<Basic />
 			<List
 				componentName={"WorkForm"}
 				legend={"Work Experience"}

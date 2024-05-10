@@ -4,7 +4,7 @@ import Text from "@/components/preview/common/TextStyle";
 import { resume } from "@/store/resumeStore";
 import { Show } from "solid-js";
 
-export default function BasicsPreview(props: { show: boolean }) {
+export default function BasicPreview(props: { show: boolean }) {
 	return (
 		<Show when={props.show}>
 			<Section>
