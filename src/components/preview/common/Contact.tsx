@@ -8,30 +8,30 @@ import type { SocialIcon } from "@/types.d.ts";
 import { type JSXElement, Show } from "solid-js";
 
 const SOCIAL_ICONS: SocialIcon = {
-	Github,
-	Linkedin,
-	Mail,
-	Location,
-	Phone,
-	Globe,
+  Github,
+  Linkedin,
+  Mail,
+  Location,
+  Phone,
+  Globe,
 };
 
 export default function Contact(props: {
-	network: string;
-	children: JSXElement;
-	url?: string;
+  network: string;
+  children: JSXElement;
+  url?: string;
 }) {
-	const Icon = SOCIAL_ICONS[props.network];
-	const ICON_SIZE = 20;
+  const Icon = SOCIAL_ICONS[props.network];
+  const ICON_SIZE = 20;
 
-	return (
-		<span class="text-sm flex gap-1">
-			<Icon size={ICON_SIZE} />
-			<Show when={props.url} fallback={props.children}>
-				<a href={props.url} target="_blank" rel="noreferrer">
-					{props.children}
-				</a>
-			</Show>
-		</span>
-	);
+  return (
+    <span class="text-sm flex gap-1">
+      <Icon size={ICON_SIZE} />
+      <Show when={props.url} fallback={props.children}>
+        <a href={props.url} target="_blank" rel="noreferrer">
+          {props.children}
+        </a>
+      </Show>
+    </span>
+  );
 }
